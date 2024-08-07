@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Herosection from '../components/Herosection'
 import News from '../components/News'
 import Features from '../components/Features'
+import Facility from '../components/Facility'
 
 const Home = () => {
   return (
@@ -12,10 +13,15 @@ const Home = () => {
         <Herosection />
         
       </section>
-      <div>
+      
         <News />
         <Features />
-      </div>
+        <Facility />
+      
+
+      
+        
+    
     </>
     
     
