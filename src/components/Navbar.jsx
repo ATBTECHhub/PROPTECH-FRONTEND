@@ -18,7 +18,7 @@ const Navbar = () => {
     window.addEventListener("scroll", set)
 
     return (
-        <nav className={`h-[75px] bg-red-500 fixed w-full z-[2] flex justify-center ${colorChange ? "bg-black" : "bg-none"}
+        <nav className={`h-[75px] fixed w-full z-[2] flex justify-center ${colorChange ? "bg-black" : "bg-none"}
 `}>
           <div className="container flex justify-between items-center">
                 <img src={logo} alt="logo" className="hidden md:block" /> 
