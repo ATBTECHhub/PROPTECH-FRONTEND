@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Button = () => {
+const Button = ({ text }) => {
   return (
-      <button className='bg-primary text-white p-[15px] rounded-[10px] '>
-          Create Account 
+    <button className="bg-primary text-white p-[15px] rounded-[10px] ">
+      {text}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
