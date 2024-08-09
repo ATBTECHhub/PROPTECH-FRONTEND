@@ -2,20 +2,24 @@ import logo2 from "../assets/logo2.svg";
 
 const Aboutus = () => {
   return (
-    <section className="grid grid-cols-2 container items-center gap-10">
-      <div
-        className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-full shadow-2xl items-center"
-      >
-        <img
-          src={logo2}
-          alt="about us logo"
-          className="w-full h-full object-contain p-4"
-        />
+    <section className="flex flex-col lg:grid lg:grid-cols-2 container items-center gap-10 p-4 lg:p-0 pt-[20px]">
+      <div className="flex justify-center mb-8 lg:mb-0">
+        <div
+          className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
+      w-full h-[450px]  shadow-2xl items-center"
+        >
+          <img
+            src={logo2}
+            alt="about us logo"
+            className="w-full h-full object-contain p-4"
+          />
+        </div>
       </div>
-      <div>
-        <h1 className="pb-[25px] text-[#2B3F58] font-bold">About Us</h1>
-        <p className="pb-[25px]  text-[#2B3F58] text-[14px] ">
+      <div className="text-center lg:text-left">
+        <h1 className="pb-[15px] text-[#2B3F58] font-bold text-xl lg:text-[24px]">
+          About Us
+        </h1>
+        <p className="pb-[15px] text-[#2B3F58] text-base lg:text-[12px] sm:text-[10px]">
           Welcome to Shortment Service Apartment, where comfort meets
           convenience. Nestled in the heart of Nigeria, our service apartments
           offer a perfect blend of home-like comfort and modern amenities,
@@ -26,8 +30,10 @@ const Aboutus = () => {
           memorable. With a focus on exceptional service and attention to
           detail, we strive to exceed your expectations.
         </p>
-        <h1 className="pb-[25px] text-[#2B3F58] font-bold">Our Apartments</h1>
-        <p className="pb-[25px]  text-[#2B3F58] text-[14px] ">
+        <h1 className="pb-[15px] text-[#2B3F58] font-bold text-xl lg:text-[24px]">
+          Our Apartments
+        </h1>
+        <p className="pb-[15px] text-[#2B3F58] text-base lg:text-[12px]">
           Our fully furnished apartments are designed with you in mind. Each
           unit features modern décor, spacious living areas, fully equipped
           kitchens, and high-speed internet as well as a private workspace.

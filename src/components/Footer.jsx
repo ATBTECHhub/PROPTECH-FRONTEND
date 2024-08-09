@@ -48,26 +48,21 @@ const Footer = () => {
             <br /> latest deals on our rooms and vacation
             <br /> discount
           </p>
-          <div className="relative w-full max-w-sm mx-auto">
+          <div className="relative w-full max-w-xs mx-auto">
             <input
               type="text"
               placeholder="Enter your email"
-              className="w-[200px] h-[60px] pr-16 p-2 border border-gray-300 rounded-md"
+              className="w-full h-[50px] pr-[120px] pl-4 p-2 border border-gray-300 rounded-md"
             />
-
-            <Link
-              to="/subcription"
-              className="absolute right-0 top-0 h-full flex justify-end"
-            >
-              <Button text="Subscribe" />
-            </Link>
-            {/* <button className="absolute right-0 top-0 h-full px-4 bg-blue-500 text-white rounded-r-md">
-              Submit
-            </button> */}
+            <button className="absolute right-[5px] top-1/2 transform -translate-y-1/2 h-[40px] px-4 bg-[#4C4989] text-white rounded-md">
+              Subscribe
+            </button>
           </div>
         </div>
 
-        <p>copyright @ 2024 Shortment.com TM. All rights reserved.</p>
+        <p className="col-start-4 text-right mt-10 whitespace-nowrap w-full container">
+          copyright © 2024 Shortment.com TM. All rights reserved.
+        </p>
       </section>
     </div>
   );
