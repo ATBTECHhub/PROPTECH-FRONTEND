@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         heroImage: "url('../src/assets/cover.svg')",
+        offersBg: "url('/src/assets/room7.svg')",
       },
       colors: {
         primary: "#4C4989",
