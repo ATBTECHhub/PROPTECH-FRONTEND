@@ -11,7 +11,7 @@ const Testimonies = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 container items-center gap-10 pt-[30px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 container items-center gap-10 pt-[30px]">
         <div
           className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
       w-full h-full shadow-2xl items-center p-[30px]"

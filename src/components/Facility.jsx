@@ -19,7 +19,7 @@ const Facility = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-[10px] text-[#2B3F58] mt-[40px] sm:mt-[75px] items-center sm:order-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-[10px] text-[#2B3F58] mt-[40px] sm:mt-[75px] items-center sm:order-2 pb-[10px]">
         {icons.map((item, index) => (
           <div
             key={index}

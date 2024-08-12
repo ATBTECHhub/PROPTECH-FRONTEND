@@ -4,50 +4,51 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <div className="bg-[#5a4885] blue-500 w-full">
-      <section className="grid grid-cols-6 container items-center gap-10 text-white">
-        <div className="font-[16px] leading-6">
-          <p>
+    <div className="bg-[#12082D] blue-500 w-full">
+      <section className="grid grid-cols-1 md:grid-cols-6 container items-center gap-10 text-white py-10 px-5">
+        <div className="col-span-1 md:col-span-2 font-[16px] leading-6">
+          <p className="text-[16px] font-bold">
             looking forward to a wonderful stay at Shortment Service Apartment
           </p>
         </div>
 
-        <div>
-          <h2 className="text-[16px]">Quick links</h2>
-          <p className="leading-[21px] text-[14px]">Explore</p>
-          <p className="">Contact Us</p>
-          <p className="">Facilities</p>
+        <div className="leading-6">
+          <h2 className="text-[16px] font-bold">Quick links</h2>
+          <p className="text-[14px]">Explore</p>
+          <p className="text-[14px]">Contact Us</p>
+          <p className="text-[14px]">Facilities</p>
+        </div>
+
+        <div className="leading-6">
+          <h2 clasName="text-[16px] font-bold">What we offer</h2>
+          <p className="text-[14px]">Reserve a space</p>
+          <p className="text-[14px]">Function as a host</p>
         </div>
 
         <div>
-          <h2>What we offer</h2>
-          <p>Reserve a space</p>
-          <p>Function as a host</p>
+          <h2 className="font-bold text-[16px]">Help</h2>
+          <p clasName="text-[14px]">About Us</p>
+          <p className="text-[14px]">Refund Policy</p>
+          <p className="text-[14px]">Privacy Policy</p>
+          <p className="text-[14px]">FAQs</p>
         </div>
 
         <div>
-          <h2>Help</h2>
-          <p>About Us</p>
-          <p>Refund Policy</p>
-          <p>Privacy Policy</p>
-          <p>FAQs</p>
+          <h2 className="font-bold text-[16px]">Social media</h2>
+          <p className="text-[14px]">Facebook</p>
+          <p className="text-[14px]">Twitter</p>
+          <p className="text-[14px]">Instagram</p>
+          <p className="text-[14px]">LinkedIn</p>
         </div>
 
-        <div>
-          <h2>Social media</h2>
-          <p>Facebook</p>
-          <p>Twitter</p>
-          <p>Instagram</p>
-          <p>LinkedIn</p>
-        </div>
-
-        <div>
-          <h2>Newsletter</h2>
-          <p>
+        <div className="col-span-1 md:col-span-2">
+          <h2 className="font-bold text-[16px]">Newsletter</h2>
+          <p className="text-[14px]">
             Kindly subscribe to our news letter to get
             <br /> latest deals on our rooms and vacation
-            <br /> discount
+            <br /> discounts.
           </p>
+
           <div className="relative w-full max-w-xs mx-auto">
             <input
               type="text"
@@ -60,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="col-start-4 text-right mt-10 whitespace-nowrap w-full container">
+        <p className="col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px]">
           copyright © 2024 Shortment.com TM. All rights reserved.
         </p>
       </section>

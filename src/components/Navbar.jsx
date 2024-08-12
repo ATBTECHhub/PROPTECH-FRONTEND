@@ -23,7 +23,7 @@ const Navbar = () => {
       }
 `}
     >
-      <div className="container flex justify-between items-center">
+      <div className="container flex justify-between items-center sm:gap-[15px]">
         <img src={logo} alt="logo" className="hidden md:block" />
         {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
         <FaWindowClose className="block md:hidden text-[30px] " />
