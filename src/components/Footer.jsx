@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-
+// grid grid-cols-1 md:grid-cols-6 container items-center gap-5 text-white py-10 px-5
 const Footer = () => {
   return (
     <div className="bg-[#12082D] blue-500 w-full">
-      <section className="grid grid-cols-1 md:grid-cols-6 container items-center gap-10 text-white py-10 px-5">
+      <section className="grid md:grid-cols-6 grid-cols-1 text-white items-center gap-5 container">
         <div className="col-span-1 md:col-span-2 font-[16px] leading-6">
           <p className="text-[16px] font-bold">
             looking forward to a wonderful stay at Shortment Service Apartment
@@ -49,22 +49,22 @@ const Footer = () => {
             <br /> discounts.
           </p>
 
-          <div className="relative w-full max-w-xs mx-auto">
+          <div className="relative w-full">
             <input
               type="text"
               placeholder="Enter your email"
-              className="w-full h-[50px] pr-[120px] pl-4 p-2 border border-gray-300 rounded-md"
+              className="w-full h-[50px] pr-[120px] pl-4 p-2 border border-gray-300 rounded-md text-black"
             />
             <button className="absolute right-[5px] top-1/2 transform -translate-y-1/2 h-[40px] px-4 bg-[#4C4989] text-white rounded-md">
               Subscribe
             </button>
           </div>
         </div>
-
-        <p className="col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px]">
-          copyright © 2024 Shortment.com TM. All rights reserved.
-        </p>
       </section>
+
+      <p className="col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px] text-white">
+        copyright © 2024 Shortment.com TM. All rights reserved.
+      </p>
     </div>
   );
 };

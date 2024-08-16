@@ -2,18 +2,15 @@ import React from "react";
 import logo from "../assets/logo.svg";
 import flag from "../assets/flag.svg";
 import mark from "../assets/mark.svg";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import Button from "./Button";
-import { Link } from "react-router-dom";
-import captcha from "../assets/captcha.svg";
-import { FaRegEyeSlash } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
 
-const Signuppg = () => {
+const Loginpg = () => {
   return (
-    <section>
+    <div>
       <nav className="bg-[#4C4989] flex justify-center h-[80px]">
         <div className="container flex justify-between items-center">
           <img src={logo} alt="logo" className="" />
@@ -25,44 +22,12 @@ const Signuppg = () => {
       </nav>
 
       <div className="items-center flex flex-col text-center ">
-        <h2 className="text-xl font-semibold text-[#2B3F58] pt-[59px]">
-          sign up for free to reserve your apartment
+        <h2 className="text-xl font-semibold text-[#2B3F58] pt-[59px] m-[15px]">
+          sign in or create an account
         </h2>
       </div>
-
-      <div className="container flex flex-col items-center border-[5px] rounded-[50px] border-[#E5E5E5] h-[1270px] md:w-[700px] mt-[10px] pt-[15px] bg-white gap-[16px] m-[15px]">
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center mt-[0px] px-[26px] py-[12px] ">
-          <FaFacebook className="text-[blue]" />
-          Sign up with Facebook
-        </p>
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] px-[26px] py-[12px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center ">
-          <FaGoogle className="text-[red]" />
-          Sign up with Google
-        </p>
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] px-[26px] py-[12px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center ">
-          <FaTwitter className="text-[blue]" />
-          Sign up with Twitter
-        </p>
-
-        <div className="flex items-center w-full justify-center gap-4 mt-4 container">
-          <hr className="w-[200px] h-[2px] border-[#666666]" />
-          <p className="font-bold text-[24px] text-[#2B3F58]">OR</p>
-          <hr className="w-[200px] h-[2px] border-[#666666]" />
-        </div>
-        <p className="mt-2 font-semibold text-[#2B3F58] text-[16px] ">
-          Sign up with your email account
-        </p>
+      <div className="container flex flex-col items-center border-[5px] rounded-[50px] border-[#E5E5E5] h-[900px] md:w-[700px] mt-[10px] pt-[15px] bg-white gap-[16px]">
         <form className="flex flex-col w-[600px] text-left gap-0">
-          <label for="Pname" className="text-[#2B3F58] text-[24px] font-normal">
-            Profile Name
-          </label>
-          <br />
-          <input
-            tpye="text"
-            placeholder="Enter your profile name"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
-          />
-          <br />
           <label for="Pname" className="text-[#2B3F58] text-[24px] font-normal">
             Email
           </label>
@@ -73,6 +38,7 @@ const Signuppg = () => {
             className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
           />
           <br />
+
           <label
             for="email"
             className="text-[#2B3F58] text-[24px] font-normal flex"
@@ -86,20 +52,23 @@ const Signuppg = () => {
             className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
           />
           <br />
-          <label
-            for="Pconfirm"
-            className="text-[#2B3F58] text-[24px] font-normal inline-flex gap-2"
-          >
-            Confirm Password
-            <FaRegEyeSlash className="inline-block item-left" /> Hide
-          </label>
-          <br />
-          <input
-            tpye="text"
-            placeholder="Enter your password"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-o"
-          />
         </form>
+
+        <div className="items-left flex w-auto pb-[50px] ">
+          <p className="pt-[25x]">
+            <input
+              type="checkbox"
+              className="mr-2 accent-green-500"
+              onChange={(e) => {
+                e.target.style.accentColor = e.target.checked
+                  ? "green"
+                  : "#E5E5E5";
+              }}
+            />
+            Remind me
+          </p>
+        </div>
+
         <p className="text-left mt-0 text-[16px] font-normal item-left">
           By creating an account, you agree to the{" "}
           <Link to="/terms" className="text-blue-600 underline">
@@ -110,40 +79,31 @@ const Signuppg = () => {
             Privacy Policy
           </Link>
         </p>
-
-        <div className="items-left w-auto pb-[50px]">
-          <p className="flex items-center border border-[#333333] rounded-[18px] p-2">
-            <input
-              type="checkbox"
-              className="mr-2 accent-green-500"
-              onChange={(e) => {
-                e.target.style.accentColor = e.target.checked
-                  ? "green"
-                  : "#E5E5E5";
-              }}
-            />
-            I am not a robot
-            <img src={captcha} alt="captcha" className="ml-[124px]" />
-          </p>
-        </div>
-        {/* 
-        <Link to="/signup">
-          <Button
-            text="Create Account"
-            className="border-[592px] bg-[#4C4989]"
-          />
-        </Link> */}
-
-        <button className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[20px] font-medium w-[580px] h-[100px] text-center">
-          Create Account
+        <button className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[20px] font-medium w-[580px] h-[80px] text-center">
+          <Link to="/signin"> Sign in </Link>
         </button>
-
-        <p className="text-[16px] text-[#12082D] pt-[15px] pb-[21px]">
-          Already have an account?
-          <span className="color-blue">
-            <u> Sign in</u>
-          </span>
+        <Link to="/privacy" className="text-blue-600 underline">
+          Forget your password
+        </Link>
+        <p className="text-left mt-0 text-[16px] font-normal item-left">
+          Don't have an account?{" "}
+          <Link to="/terms" className="text-blue-600 underline">
+            Sign up
+          </Link>
         </p>
+        <div className="flex items-center w-full justify-center gap-4 mt-4 container">
+          <hr className="w-[200px] h-[2px] border-[#666666]" />
+          <p className="font-bold text-[16px] text-[#2B3F58]">
+            or continue with{" "}
+          </p>
+          <hr className="w-[200px] h-[2px] border-[#666666]" />
+        </div>
+
+        <div className="flex gap-[40px]">
+          <FaFacebook className="text-blue-700" />{" "}
+          <FaGoogle className="text-red-500" />{" "}
+          <FaTwitter className="text-blue-700" />
+        </div>
       </div>
 
       <div className="bg-[#12082D] blue-500 w-full">
@@ -203,13 +163,12 @@ const Signuppg = () => {
             </div>
           </div>
         </section>
-
-        <p className=" text-white col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px]">
+        <p className="text-white col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px]">
           copyright © 2024 Shortment.com TM. All rights reserved.
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Signuppg;
+export default Loginpg;
