@@ -23,7 +23,7 @@ const Herosection = () => {
             <select
               name="location"
               id="location"
-              className=" border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58] "
+              className="bg-transparent border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58] "
             >
               <option value="Lagos">Select Location</option>
               <option value="Abeokuta" placeholder="Nigeria">
@@ -42,7 +42,7 @@ const Herosection = () => {
             <select
               name="apartment"
               id="apartment"
-              className="border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
             >
               <option value="Studio">Select Type</option>
               <option value="Apartment">Apartment</option>
@@ -59,7 +59,7 @@ const Herosection = () => {
             <select
               name="host"
               id="host"
-              className="border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
             >
               <option value="Yes">Select Location</option>
               <option value="No">No</option>
@@ -76,7 +76,7 @@ const Herosection = () => {
             <select
               name="reserve"
               id="reserve"
-              className="border-none placeholder-gray-500 text-[10px] w-full"
+              className="bg-transparent border-none placeholder-gray-500 text-[10px] w-full"
             >
               <option value="One Bedroom">Select Location</option>
               <option value="Two Bedroom">Two Bedroom</option>
