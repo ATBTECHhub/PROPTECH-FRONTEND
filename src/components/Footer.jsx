@@ -4,50 +4,77 @@ import Button from "./Button";
 // grid grid-cols-1 md:grid-cols-6 container items-center gap-5 text-white py-10 px-5
 const Footer = () => {
   return (
-    <div className="bg-[#12082D] blue-500 w-full">
-      <section className="grid md:grid-cols-6 grid-cols-1 text-white items-center gap-5 container">
-        <div className="col-span-1 md:col-span-2 font-[16px] leading-6">
-          <p className="text-[16px] font-bold">
-            looking forward to a wonderful stay at Shortment Service Apartment
-          </p>
+    <section className="bg-[#12082D] blue-500 w-full">
+      <div className="flex gap-[33px] text-white container">
+        <p className="text-[14px]">
+          looking forward to a wonderful stay at Shortment Service Apartment
+        </p>
+        <div className="flex gap-[33px]">
+          <ul className="leading-6">
+            <li className="text-[16px]">Contact Us</li>
+            <li className="text-[12px]">
+              <Link to="/">Contact Us</Link>
+            </li>
+
+            <li className="text-[12px]">
+              <Link to="/">+2349069994348</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link to="/">Facilities</Link>
+            </li>
+          </ul>
+
+          <ul className="leading-6">
+            <li className="text-base">What we offer</li>
+            <li className="text-[12px]">
+              <Link>Reserve a space</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Function as a host</Link>
+            </li>
+          </ul>
         </div>
 
-        <div className="leading-6">
-          <h2 className="text-[16px] font-bold">Quick links</h2>
-          <p className="text-[14px]">Explore</p>
-          <p className="text-[14px]">Contact Us</p>
-          <p className="text-[14px]">Facilities</p>
+        <div className="flex gap-[33px] ">
+          <ul className="leading-6">
+            <li className="text-base">Help</li>
+            <li className="text-[12px]">
+              <Link>About us</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Refund Policy</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Privacy Policy</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>FAQs</Link>
+            </li>
+          </ul>
+
+          <ul className="leading-6">
+            <li className="text-base">Social media</li>
+            <li className="text-[12px]">
+              <Link>Facebook</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Twitter</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Instagram</Link>
+            </li>
+            <li className="text-[12px]">
+              <Link>Linkedin</Link>
+            </li>
+          </ul>
         </div>
 
-        <div className="leading-6">
-          <h2 clasName="text-[16px] font-bold">What we offer</h2>
-          <p className="text-[14px]">Reserve a space</p>
-          <p className="text-[14px]">Function as a host</p>
-        </div>
-
-        <div>
-          <h2 className="font-bold text-[16px]">Help</h2>
-          <p clasName="text-[14px]">About Us</p>
-          <p className="text-[14px]">Refund Policy</p>
-          <p className="text-[14px]">Privacy Policy</p>
-          <p className="text-[14px]">FAQs</p>
-        </div>
-
-        <div>
-          <h2 className="font-bold text-[16px]">Social media</h2>
-          <p className="text-[14px]">Facebook</p>
-          <p className="text-[14px]">Twitter</p>
-          <p className="text-[14px]">Instagram</p>
-          <p className="text-[14px]">LinkedIn</p>
-        </div>
-
-        <div className="col-span-1 md:col-span-2">
-          <h2 className="font-bold text-[16px]">Newsletter</h2>
-          <p className="text-[14px]">
-            Kindly subscribe to our news letter to get
-            <br /> latest deals on our rooms and vacation
-            <br /> discounts.
-          </p>
+        <ul className="leading-6">
+          <li className="text-[16px]">Newsletter</li>
+          <li className="text-[12px]">
+            Kindly subscribe to our news letter to get latest deals on our rooms
+            and vacation discounts.
+          </li>
 
           <div className="relative w-full">
             <input
@@ -59,13 +86,13 @@ const Footer = () => {
               Subscribe
             </button>
           </div>
-        </div>
-      </section>
+        </ul>
+      </div>
 
       <p className="col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px] text-white">
         copyright © 2024 Shortment.com TM. All rights reserved.
       </p>
-    </div>
+    </section>
   );
 };
 

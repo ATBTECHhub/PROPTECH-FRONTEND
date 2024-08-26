@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import logos from "../assets/logos2.svg";
 import Button from "./Button";
 import { useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
@@ -25,6 +26,8 @@ const Navbar = () => {
     >
       <div className="container flex justify-between items-center sm:gap-[15px]">
         <img src={logo} alt="logo" className="hidden md:block" />
+        <img src={logos} alt="logo" className="block md:hidden" />
+
         {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
         <FaWindowClose className="block md:hidden text-[30px] " />
         <ul className="lg:flex gap-[32px] text-white hidden ">
@@ -54,7 +57,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <FaRegUserCircle className="lg:hidden text-[30px]" />
+
         <FaBars className="lg:hidden text-[30px]" />
       </div>
     </nav>

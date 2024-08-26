@@ -49,18 +49,18 @@ const Loglanding = () => {
             <select
               name="reserve"
               id="reserve"
-              className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3"
+              className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
             >
-              <option value="One Bedroom" className="text-xs p-7">
+              <option value="One Bedroom" className="text-xs py-2 px-4">
                 Handlling Bookings
               </option>
-              <option value="Two Bedroom" className="text-xs">
+              <option value="Two Bedroom" className="text-xs py-2 px-4">
                 Favorite
               </option>
-              <option value="Two Bedroom" className="text-xs">
+              <option value="Two Bedroom" className="text-xs py-2 px-4">
                 Message
               </option>
-              <option value="Two Bedroom" className="text-xs">
+              <option value="Two Bedroom" className="text-xs py-2 px-4">
                 Logout
               </option>
             </select>
@@ -178,10 +178,14 @@ const Loglanding = () => {
               alt=""
               className="pb-[20px] sm:pb-[30px] lg:pb-[37px]"
             />
+            <ul>
+              <Link to="/royalsuit">
+                <li className="font-bold text-[#2B3F58] leading-[27px] text-center sm:text-left">
+                  {item.header}
+                </li>
+              </Link>
+            </ul>
 
-            <p className="font-bold text-[#2B3F58] leading-[27px] text-center sm:text-left">
-              {item.header}
-            </p>
             <p className="text-[#2B3F58] text-[1rem] font-[16px] pb-[10px] pt-[8px] text-center sm:text-left">
               {item.Location}
             </p>
@@ -327,6 +331,7 @@ const Loglanding = () => {
               <IoIosStar className="text-[#FFA92C]" />{" "}
               <IoIosStar className="text-[#FFA92C]" />
             </p>
+            <br />
           </div>
           <div
             className="flex flex-col border-white border-[10px] rounded-[30px] bg-white

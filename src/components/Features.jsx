@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <section className="grid grid-cols-1 gap-[20px] text-[#2B3F58] m-[20px] sm:grid-cols-2 lg:grid-cols-3 sm:gap-[30px] lg:gap-[41px] sm:m-[50px] lg:m-[75px] container">
+    <section className="grid grid-cols-1 gap-[20px] text-[#2B3F58] m-[5px] sm:grid-cols-2 lg:grid-cols-3 sm:gap-[30px] lg:gap-[41px] sm:m-[50px] lg:m-[75px] container">
       {rooms.map((item, index) => (
         <div key={index} className="flex flex-col">
           <img

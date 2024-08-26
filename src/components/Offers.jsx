@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Offers = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 container items-center gap-10 pt-[30px] bg-[url('/src/assets/room7.svg')] bg-cover bg-center h-auto md:h-screen">
+    <section className="grid grid-cols-2 md:grid-cols-2 container items-center gap-10 pt-[30px] bg-[url('/src/assets/room7.svg')] bg-cover bg-center h-[500px] md:h-screen">
       <div
         className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
        w-full sm:w-[300px] sm:h-[60px] md:w-[445px] md:h-[315px] shadow-2xl items-center p-[30px] container"

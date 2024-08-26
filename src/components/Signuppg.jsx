@@ -1,11 +1,10 @@
 import React from "react";
+import logos from "../assets/logos2.svg";
 import logo from "../assets/logo.svg";
-import flag from "../assets/flag.svg";
 import mark from "../assets/mark.svg";
-import { FaFacebook } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import Button from "./Button";
+import flag from "../assets/flag.svg";
+import quest from "../assets/quest.svg";
+import google from "../assets/google.svg";
 import { Link } from "react-router-dom";
 import captcha from "../assets/captcha.svg";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -14,93 +13,93 @@ import { FaEye } from "react-icons/fa";
 const Signuppg = () => {
   return (
     <section>
-      <nav className="bg-[#4C4989] flex justify-center h-[80px]">
+      <nav className="bg-[#FFFFFF] md:bg-[#4C4989] flex justify-center h-[90px] border-b-[3px]">
         <div className="container flex justify-between items-center">
-          <img src={logo} alt="logo" className="" />
-          <div className="flex gap-[50px]">
+          <img src={logos} alt="logo" className="block md:hidden" />
+          <img src={logo} alt="logo" className="hidden md:block" />
+
+          <div className="flex gap-[20px] md:gap-[50px]">
             <img src={flag} alt="flag" />
-            <img src={mark} alt="icon" />
+            <img src={quest} alt="icon" />
+            <img src={mark} alt="mark" className="hidden md:block" />
           </div>
         </div>
       </nav>
 
-      <div className="items-center flex flex-col text-center ">
-        <h2 className="text-xl font-semibold text-[#2B3F58] pt-[59px]">
-          sign up for free to reserve your apartment
+      <div className="items-center flex flex-col text-center px-4 sm:px-2">
+        <h2 className="text-[1.2rem] sm:text-[1rem] font-bold text-[#2B3F58] pb-[21px] pt-[21px]">
+          Sign up for free to reserve your apartment
         </h2>
       </div>
 
-      <div className="container flex flex-col items-center border-[5px] rounded-[50px] border-[#E5E5E5] h-[1270px] md:w-[700px] mt-[10px] pt-[15px] bg-white gap-[16px] m-[15px]">
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center mt-[0px] px-[26px] py-[12px] ">
-          <FaFacebook className="text-[blue]" />
-          Sign up with Facebook
-        </p>
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] px-[26px] py-[12px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center ">
-          <FaGoogle className="text-[red]" />
-          Sign up with Google
-        </p>
-        <p className="text-[#2B3F58] border border-[#666666] rounded-[32px] px-[26px] py-[12px] flex gap-[10px] justify-center w-[600px] h-[44px] items-center ">
-          <FaTwitter className="text-[blue]" />
-          Sign up with Twitter
-        </p>
-
-        <div className="flex items-center w-full justify-center gap-4 mt-4 container">
-          <hr className="w-[200px] h-[2px] border-[#666666]" />
-          <p className="font-bold text-[24px] text-[#2B3F58]">OR</p>
-          <hr className="w-[200px] h-[2px] border-[#666666]" />
-        </div>
-        <p className="mt-2 font-semibold text-[#2B3F58] text-[16px] ">
-          Sign up with your email account
-        </p>
-        <form className="flex flex-col w-[600px] text-left gap-0">
-          <label for="Pname" className="text-[#2B3F58] text-[24px] font-normal">
-            Profile Name
+      <div className="container flex flex-col items-center border-8 sm:border-4 rounded-[50px] sm:rounded-[30px] border-darkgrey h-auto sm:w-[550px] mt-[10px] p-[15px] bg-white gap-[16px] m-[15px] px-4 sm:px-2">
+        <form className="flex flex-col w-full sm:w-full text-left gap-2 sm:gap-1">
+          <label
+            for="Pname"
+            className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal"
+          >
+            Username
           </label>
-          <br />
           <input
-            tpye="text"
+            type="text"
             placeholder="Enter your profile name"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
+            className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
           />
-          <br />
-          <label for="Pname" className="text-[#2B3F58] text-[24px] font-normal">
+          <label
+            for="Pname"
+            className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal mt-4"
+          >
             Email
           </label>
-          <br />
           <input
-            tpye="text"
+            type="text"
             placeholder="Enter your email"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
+            className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
           />
-          <br />
+          <label
+            for="Pname"
+            className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal mt-4"
+          >
+            Phone number
+          </label>
+          <input
+            type="number"
+            placeholder="+234"
+            className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
+          />
+          <label
+            for="password"
+            className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal flex justify-between mt-4"
+          >
+            Password
+            <span className="flex items-center ml-auto gap-3">
+              <FaRegEyeSlash className="text-[#666666]" />
+              Hide
+            </span>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter your password"
+            className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
+          />
           <label
             for="email"
-            className="text-[#2B3F58] text-[24px] font-normal flex"
-          >
-            Password <FaRegEyeSlash /> Hide
-          </label>
-          <br />
-          <input
-            tpye="text"
-            placeholder="Enter your password"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-0"
-          />
-          <br />
-          <label
-            for="Pconfirm"
-            className="text-[#2B3F58] text-[24px] font-normal inline-flex gap-2"
+            className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal flex justify-between mt-4"
           >
             Confirm Password
-            <FaRegEyeSlash className="inline-block item-left" /> Hide
+            <span className="flex items-center ml-auto gap-3">
+              <FaRegEyeSlash className="text-[#666666]" />
+              Hide
+            </span>
           </label>
-          <br />
           <input
-            tpye="text"
+            type="text"
             placeholder="Enter your password"
-            className="w-full h-[80px] border border-[#666666] rounded-[12px] pl-[24px] text-[14px] mt-o"
+            className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
           />
         </form>
-        <p className="text-left mt-0 text-[16px] font-normal item-left">
+
+        <p className="text-left mt-2 text-[14px] sm:text-[12px] font-normal">
           By creating an account, you agree to the{" "}
           <Link to="/terms" className="text-blue-600 underline">
             Terms of Use
@@ -111,8 +110,8 @@ const Signuppg = () => {
           </Link>
         </p>
 
-        <div className="items-left w-auto pb-[50px]">
-          <p className="flex items-center border border-[#333333] rounded-[18px] p-2">
+        <div className="w-[250px] pb-[30px] sm:pb-[20px] text-left">
+          <p className="flex items-center border-2 sm:border-[1.5px] border-[#333333] rounded-[10px] sm:rounded-[8px] p-2 sm:p-1">
             <input
               type="checkbox"
               className="mr-2 accent-green-500"
@@ -123,89 +122,36 @@ const Signuppg = () => {
               }}
             />
             I am not a robot
-            <img src={captcha} alt="captcha" className="ml-[124px]" />
+            <img
+              src={captcha}
+              alt="captcha"
+              className="ml-[20px] sm:ml-[10px]"
+            />
           </p>
         </div>
-        {/* 
-        <Link to="/signup">
-          <Button
-            text="Create Account"
-            className="border-[592px] bg-[#4C4989]"
-          />
-        </Link> */}
 
-        <button className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[20px] font-medium w-[580px] h-[100px] text-center">
-          Create Account
+        <button className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center">
+          Sign Up
         </button>
 
-        <p className="text-[16px] text-[#12082D] pt-[15px] pb-[21px]">
+        <div className="flex items-center w-full justify-center gap-2 sm:gap-1 mt-4">
+          <hr className="w-[80px] sm:w-[60px] h-[2px] border-2 sm:border-[1.5px] border-darkgrey" />
+          <p className="font-bold text-[16px] sm:text-[14px] text-[#2B3F58]">
+            Or
+          </p>
+          <hr className="w-[80px] sm:w-[60px] h-[2px] border-2 sm:border-[1.5px] border-darkgrey" />
+        </div>
+
+        <p className="text-[#2B3F58] border-2 sm:border-[1.5px] border-darkgrey rounded-[10px] sm:rounded-[8px] px-[16px] py-[8px] flex gap-[10px] justify-center w-full sm:w-full h-[40px] sm:h-[35px] items-center">
+          <img src={google} alt="flag" />
+          Sign up with Google
+        </p>
+
+        <p className="text-[14px] sm:text-[12px] text-[#2B3F58] pt-[10px] pb-[15px]">
           Already have an account?
-          <span className="color-blue">
+          <span className="color-[#4C4989]">
             <u> Sign in</u>
           </span>
-        </p>
-      </div>
-
-      <div className="bg-[#12082D] blue-500 w-full">
-        <section className="grid grid-cols-1 md:grid-cols-6 container items-center gap-10 text-white py-10 px-5">
-          <div className="col-span-1 md:col-span-2 font-[16px] leading-6">
-            <p className="text-[16px] font-bold">
-              looking forward to a wonderful stay at Shortment Service Apartment
-            </p>
-          </div>
-
-          <div className="leading-6">
-            <h2 className="text-[16px] font-bold">Quick links</h2>
-            <p className="text-[14px]">Explore</p>
-            <p className="text-[14px]">Contact Us</p>
-            <p className="text-[14px]">Facilities</p>
-          </div>
-
-          <div className="leading-6">
-            <h2 clasName="text-[16px] font-bold">What we offer</h2>
-            <p className="text-[14px]">Reserve a space</p>
-            <p className="text-[14px]">Function as a host</p>
-          </div>
-
-          <div>
-            <h2 className="font-bold text-[16px]">Help</h2>
-            <p clasName="text-[14px]">About Us</p>
-            <p className="text-[14px]">Refund Policy</p>
-            <p className="text-[14px]">Privacy Policy</p>
-            <p className="text-[14px]">FAQs</p>
-          </div>
-
-          <div>
-            <h2 className="font-bold text-[16px]">Social media</h2>
-            <p className="text-[14px]">Facebook</p>
-            <p className="text-[14px]">Twitter</p>
-            <p className="text-[14px]">Instagram</p>
-            <p className="text-[14px]">LinkedIn</p>
-          </div>
-
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="font-bold text-[16px]">Newsletter</h2>
-            <p className="text-[14px]">
-              Kindly subscribe to our news letter to get
-              <br /> latest deals on our rooms and vacation
-              <br /> discounts.
-            </p>
-
-            <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Enter your email"
-                className="w-full h-[50px] pr-[120px] pl-4 p-2 border border-gray-300 rounded-md"
-              />
-              <button className="absolute right-[5px] top-1/2 transform -translate-y-1/2 h-[40px] px-4 bg-[#4C4989] text-white rounded-md">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <p className=" text-white col-span-1 md:col-span-6 text-right mt-10 whitespace-nowrap w-full container text-[14px]">
-          copyright © 2024 Shortment.com TM. All rights reserved.
         </p>
       </div>
     </section>
