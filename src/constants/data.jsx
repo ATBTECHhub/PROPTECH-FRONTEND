@@ -4,6 +4,13 @@ import frame3 from "../assets/frame3.svg";
 import frame4 from "../assets/frame4.svg";
 import frame5 from "../assets/frame5.svg";
 import frame6 from "../assets/frame6.svg";
+import frame7 from "../assets/frame7.svg";
+import frame8 from "../assets/frame8.svg";
+import frame9 from "../assets/frame9.svg";
+import frame11 from "../assets/frame9.svg";
+
+
+
 
 import icon1 from "../assets/icon1.svg";
 import icon2 from "../assets/icon2.svg";
@@ -81,5 +88,95 @@ export const icons = [
   {
     image: icon6,
     content: "Exercise Space",
+  },
+];
+
+export const stay = [
+  {
+    image: frame1,
+    header: "Royal Suit",
+    Location: "Jakande, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame2,
+    header: "Imperial Residence",
+    Location: "Festac, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame3,
+    header: "Studio Apartment",
+    Location: "Omole Estate, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame4,
+    header: "Royal Suit",
+    Location: "Epe, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame5,
+    header: "Royal Suit",
+    Location: "Ikeja, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame6,
+    header: "Royal Suit",
+    Location: "Banana Island, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame7,
+    header: "Royal Suit",
+    Location: "Lekki State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame8,
+    header: "Royal Suit",
+    Location: "Lekki State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame9,
+    header: "Royal Suit",
+    Location: "Ajah State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+];
+
+export const aparts = [
+  {
+    image: frame6,
+    header: "Royal Suit",
+    Location: "Lekki Phase 1, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame11,
+    header: "Imperial Residence",
+    Location: "Ikoyi, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
+  },
+  {
+    image: frame6,
+    header: "Studio Apartment",
+    Location: "Lekki Phase 2, Lagos State, Nigeria",
+    amenities: "3 beds, 3baths",
+    price: "50,000 per night",
   },
 ];
