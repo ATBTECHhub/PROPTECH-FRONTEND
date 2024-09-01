@@ -19,18 +19,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-[75px] fixed w-full z-[2] flex justify-center ${
+      className={`h-[75px] fixed w-full  flex justify-center z-50 ${
         colorChange ? "bg-black" : "bg-none"
       }
 `}
     >
-      <div className="container flex justify-between items-center sm:gap-[15px]">
-        <img src={logo} alt="logo" className="hidden md:block" />
+      <div className="flex justify-between items-center sm:gap-[15px] container">
+        <img src={logo} alt="logo" className="md:block hidden" />
         <img src={logos} alt="logo" className="block md:hidden" />
 
         {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
-        <FaWindowClose className="block md:hidden text-[30px] " />
-        <ul className="lg:flex gap-[32px] text-white hidden ">
+        <FaWindowClose className="block md:hidden text-[30px]" />
+        <ul className="lg:flex gap-[32px] hidden text-white">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -47,8 +47,8 @@ const Navbar = () => {
             <Link to="/contact-us">Contact Us</Link>
           </li>
         </ul>
-        <ul className="lg:flex gap-[28px] text-white items-center hidden ">
-          <li className="border border-white rounded-[10px] px-[26px] py-[15px]">
+        <ul className="lg:flex items-center gap-[28px] hidden text-white">
+          <li className="border-white px-[26px] py-[15px] border rounded-[10px]">
             <Link to="/login">Log in</Link>
           </li>
           <li>
