@@ -1,7 +1,7 @@
 const Herosection = () => {
   return (
-    <section className="text-center items-center flex flex-col pt-[100px] pb-[100px] md:pt-[180px] md:pb-[130px]">
-      <div className="text-white px-4 md:px-0">
+    <section className="flex flex-col items-center pt-[100px] md:pt-[180px] pb-[100px] md:pb-[130px] text-center">
+      <div className="px-4 md:px-0 text-white">
         <h1 className="text-3xl md:text-6xl leading-8 md:leading-12">
           Find Your Perfect Shortlet <br />
           In Nigeria
@@ -11,19 +11,19 @@ const Herosection = () => {
           Nigeria's most vibrant cities
         </p>
       </div>
-      <div className="items-center w-full px-4 md:px-[275px]">
-        <form className="text-black border border-white bg-white rounded-[20px] w-full md:w-[800px] h-auto md:h-[60px] pt-[10px] px-[10px] md:px-0 flex flex-col md:flex-row gap-[10px] md:gap-[15px] justify-center items-center">
+      <div className="flex justify-center items-center px-4 md:px-[275px] w-full">
+        <form className="flex md:flex-row flex-col justify-center items-center gap-[10px] md:gap-[15px] border-white bg-white p-4 border rounded-lg w-full md:w-[800px] text-black">
           <div className="flex flex-col w-full">
             <label
               htmlFor="location"
-              className="text-left mb-2 text-[12px] md:text-[14px] font-semibold text-[#2B3F58] border-none"
+              className="mb-2 border-none font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
             >
               Location
             </label>
             <select
               name="location"
               id="location"
-              className="bg-transparent border-none placeholder-gray-500 text-[10px] md:text-[12px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
               <option value="Lagos">Select Location</option>
               <option value="Abeokuta" placeholder="Nigeria">
@@ -35,14 +35,14 @@ const Herosection = () => {
           <div className="flex flex-col w-full">
             <label
               htmlFor="apartment"
-              className="text-left mb-2 text-[12px] md:text-[14px] font-semibold text-[#2B3F58]"
+              className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
             >
               Apartment Type
             </label>
             <select
               name="apartment"
               id="apartment"
-              className="bg-transparent border-none placeholder-gray-500 text-[10px] md:text-[12px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
               <option value="Studio">Select Type</option>
               <option value="Apartment">Apartment</option>
@@ -52,14 +52,14 @@ const Herosection = () => {
           <div className="flex flex-col w-full">
             <label
               htmlFor="host"
-              className="text-left mb-2 text-[12px] md:text-[14px] font-semibold text-[#2B3F58]"
+              className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
             >
               Function as a Host
             </label>
             <select
               name="host"
               id="host"
-              className="bg-transparent border-none placeholder-gray-500 text-[10px] md:text-[12px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
               <option value="Yes">Select Option</option>
               <option value="No">No</option>
@@ -69,14 +69,14 @@ const Herosection = () => {
           <div className="flex flex-col w-full">
             <label
               htmlFor="reserve"
-              className="text-left mb-2 text-[12px] md:text-[14px] font-semibold text-[#2B3F58]"
+              className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
             >
               Reserve a Space
             </label>
             <select
               name="reserve"
               id="reserve"
-              className="bg-transparent border-none placeholder-gray-500 text-[10px] md:text-[12px] w-full text-[#2B3F58]"
+              className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
               <option value="One Bedroom">Select Option</option>
               <option value="Two Bedroom">Two Bedroom</option>
@@ -92,30 +92,30 @@ export default Herosection;
 
 // const Herosection = () => {
 //   return (
-//     <section className="text-center flex flex-col pt-[100px] pb-[80px] sm:pt-[180px] sm:pb-[130px] w-full">
-//       <div className="text-white px-4 sm:px-0">
-//         <h1 className="text-3xl leading-8 sm:text-6xl sm:leading-[72px]">
+//     <section className="flex flex-col pt-[100px] sm:pt-[180px] pb-[80px] sm:pb-[130px] w-full text-center">
+//       <div className="px-4 sm:px-0 text-white">
+//         <h1 className="text-3xl sm:text-6xl leading-8 sm:leading-[72px]">
 //           Find Your Perfect Shortlet <br />
 //           In Nigeria
 //         </h1>
-//         <p className="pt-[10px] pb-[20px] sm:pt-[20px] sm:pb-[10px] text-sm sm:text-base">
+//         <p className="pt-[10px] sm:pt-[20px] pb-[20px] sm:pb-[10px] text-sm sm:text-base">
 //           Discover comfortable and affordable apartments in the heart of
 //           Nigeria's most vibrant cities
 //         </p>
 //       </div>
-//       <div className="w-full flex justify-center items-center">
-//         <form className="text-black border-4 border-white bg-white rounded-[50px] w-[500px] sm:w-[500px] pt-[10px] pb-[18px] sm:px-[30px] flex flex-col sm:flex-row gap-10 sm:gap-[20px]">
+//       <div className="flex justify-center items-center w-full">
+//         <form className="flex sm:flex-row flex-col gap-10 sm:gap-[20px] border-4 border-white bg-white sm:px-[30px] pt-[10px] pb-[18px] rounded-[50px] w-[500px] sm:w-[500px] text-black">
 //           <div className="flex flex-col w-full">
 //             <label
 //               htmlFor="location"
-//               className="text-left mb-2 text-[12px] font-semibold text-[#2B3F58]"
+//               className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left"
 //             >
 //               Location
 //             </label>
 //             <select
 //               name="location"
 //               id="location"
-//               className=" border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58] "
+//               className="border-none w-full text-[#2B3F58] text-[10px] placeholder-gray-500"
 //             >
 //               <option value="Lagos">Select Location</option>
 //               <option value="Abeokuta" placeholder="Nigeria">
@@ -127,14 +127,14 @@ export default Herosection;
 //           <div className="flex flex-col w-full">
 //             <label
 //               htmlFor="apartment"
-//               className="text-left mb-2 text-[12px] font-semibold text-[#2B3F58]"
+//               className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left"
 //             >
 //               Apartment Type
 //             </label>
 //             <select
 //               name="apartment"
 //               id="apartment"
-//               className="border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
+//               className="border-none w-full text-[#2B3F58] text-[10px] placeholder-gray-500"
 //             >
 //               <option value="Studio">Select Type</option>
 //               <option value="Apartment">Apartment</option>
@@ -144,14 +144,14 @@ export default Herosection;
 //           <div className="flex flex-col w-full">
 //             <label
 //               htmlFor="host"
-//               className="text-left mb-2 text-[12px] font-semibold text-[#2B3F58]"
+//               className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left"
 //             >
 //               Function as a Host
 //             </label>
 //             <select
 //               name="host"
 //               id="host"
-//               className="border-none placeholder-gray-500 text-[10px] w-full text-[#2B3F58]"
+//               className="border-none w-full text-[#2B3F58] text-[10px] placeholder-gray-500"
 //             >
 //               <option value="Yes">Select Location</option>
 //               <option value="No">No</option>
@@ -161,14 +161,14 @@ export default Herosection;
 //           <div className="flex flex-col w-full">
 //             <label
 //               htmlFor="reserve"
-//               className="text-left mb-2 text-[12px] font-semibold text-[#2B3F58]"
+//               className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left"
 //             >
 //               Reserve a Space
 //             </label>
 //             <select
 //               name="reserve"
 //               id="reserve"
-//               className="border-none placeholder-gray-500 text-[10px] w-full"
+//               className="border-none w-full text-[10px] placeholder-gray-500"
 //             >
 //               <option value="One Bedroom">Select Location</option>
 //               <option value="Two Bedroom">Two Bedroom</option>
