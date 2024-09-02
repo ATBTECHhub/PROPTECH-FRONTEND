@@ -21,7 +21,7 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Adeola John
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
             I had an incredible stay at Shortment Service Apartment. The
             apartment was clean, modern, and had all the amenities I needed.
             Highly recommend it for both short and long stays!
@@ -40,7 +40,7 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Julius Jimmy
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
             Fantastic location and excellent service! The apartment was spacious
             and comfortable, making me feel right at home. The nearby
             restaurants and shops were an added bonus. Will definitely stay here
@@ -60,7 +60,7 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Andrew Blessing
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
             One of the best service apartments I've ever stayed in. The fully
             equipped kitchen and laundry facilities were a lifesaver. The view
             from the balcony was stunning, and the gym was well-maintained.

@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="flex flex-col items-center bg-[#2B3F58] text-white lg:hidden">
+        <div className="flex flex-col items-center bg-[#4C4989] text-white lg:hidden">
           <ul className="flex flex-col gap-[15px] mt-4">
             <li>
               <Link to="/" onClick={toggleNavbar}>

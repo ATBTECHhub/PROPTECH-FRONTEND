@@ -1,6 +1,9 @@
+import { CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
+
 const Herosection = () => {
   return (
-    <section className="flex flex-col items-center pt-[100px] md:pt-[180px] pb-[100px] md:pb-[130px] text-center">
+    <section className="flex flex-col items-center pt-[100px] md:pt-[180px] pb-[100px] md:pb-[130px] text-center ">
       <div className="px-4 md:px-0 text-white">
         <h1 className="text-3xl md:text-6xl leading-8 md:leading-12">
           Find Your Perfect Shortlet <br />
@@ -11,8 +14,8 @@ const Herosection = () => {
           Nigeria's most vibrant cities
         </p>
       </div>
-      <div className="flex justify-center items-center px-4 md:px-[275px] w-full">
-        <form className="flex md:flex-row flex-col justify-center items-center gap-[10px] md:gap-[15px] border-white bg-white p-4 border rounded-lg w-full md:w-[800px] text-black">
+      <div className="flex justify-center items-center px-2 md:px-[275px] w-full ">
+        <form className="flex md:flex-row flex-col justify-center items-center gap-11 md:gap-[15px] border-white  bg-white p-4 border rounded-[3rem] w-full md:w-[800px] text-black">
           <div className="flex flex-col w-full">
             <label
               htmlFor="location"
@@ -54,33 +57,25 @@ const Herosection = () => {
               htmlFor="host"
               className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
             >
-              Function as a Host
+              Number of Beds
             </label>
             <select
               name="host"
               id="host"
               className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
-              <option value="Yes">Select Option</option>
+              <option value="Yes">Select number of beds </option>
               <option value="No">No</option>
             </select>
           </div>
 
-          <div className="flex flex-col w-full">
-            <label
-              htmlFor="reserve"
-              className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
-            >
-              Reserve a Space
-            </label>
-            <select
-              name="reserve"
-              id="reserve"
-              className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
-            >
-              <option value="One Bedroom">Select Option</option>
-              <option value="Two Bedroom">Two Bedroom</option>
-            </select>
+          <div className="flex flex-col w-full items-center">
+            <Link>
+              <p className="flex gap-[14px] bg-[#4C4989] px-[14px] md:px-[26px] py-[12px] border rounded-[50px] md:rounded-[30px] w-[194px] md:w-auto text-white items-center">
+                <CiSearch className="text-white" />
+                <b className="text-[16px]">Search</b>
+              </p>
+            </Link>
           </div>
         </form>
       </div>
