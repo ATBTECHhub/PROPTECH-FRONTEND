@@ -2,9 +2,9 @@ import { IoIosStar } from "react-icons/io";
 
 const Testimonies = () => {
   return (
-    <section className="text-center items-center flex flex-col pt-[10px] pb-[50px]">
+    <section className="text-center items-center flex flex-col pt-[10px] pb-[50px] m-[30px]">
       <div>
-        <h1 className="pb-[15px] pt-[20px] text-[25px] font-bold text-[#2B3F58]">
+        <h1 className="pb-[15px] pt-[20px] text-[30px] font-bold text-[#2B3F58]">
           Testimonies
         </h1>
         <p className="text-[#2B3F58] text-[14px]">
@@ -21,10 +21,15 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Adeola John
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
             I had an incredible stay at Shortment Service Apartment. The
             apartment was clean, modern, and had all the amenities I needed.
             Highly recommend it for both short and long stays!
+          </p><br />
+          <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
+            2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />
           </p>
         </div>
 
@@ -35,11 +40,16 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Julius Jimmy
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
             Fantastic location and excellent service! The apartment was spacious
             and comfortable, making me feel right at home. The nearby
             restaurants and shops were an added bonus. Will definitely stay here
             again on my next visit.
+          </p><br />
+          <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
+            2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />
           </p>
         </div>
 
@@ -50,11 +60,16 @@ const Testimonies = () => {
           <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
             Andrew Blessing
           </h1>
-          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+          <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-justify">
             One of the best service apartments I've ever stayed in. The fully
             equipped kitchen and laundry facilities were a lifesaver. The view
             from the balcony was stunning, and the gym was well-maintained.
             Perfect for business travelers.
+          </p>
+          <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
+            2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />{" "}
+            <IoIosStar className="text-[#FFA92C]" />
           </p>
         </div>
       </div>

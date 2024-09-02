@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Aboutus = () => {
   return (
-    <section className="flex flex-col lg:grid lg:grid-cols-2 container items-center gap-10 p-4 lg:p-0 pt-[20px]">
+    <section className="flex flex-col lg:grid lg:grid-cols-2 container items-center gap-10 p-4 lg:p-0 pt-[20px] mt-[40px]">
       <div className="flex justify-center mb-8 lg:mb-0">
         <div
           className="flex flex-col border-white border-[10px] lg:rounded-[30px] rounded:[20px] bg-white
@@ -21,7 +21,7 @@ const Aboutus = () => {
         <h1 className="pb-[15px] text-[#2B3F58] font-bold text-[20px] lg:text-[24px]">
           About Us
         </h1>
-        <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[16px] sm:text-[10px]">
+        <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[16px] sm:text-[10px] text-justify">
           Welcome to Shortment Service Apartment, where comfort meets
           convenience. Nestled in the heart of Nigeria, our service apartments
           offer a perfect blend of home-like comfort and modern amenities,
@@ -35,7 +35,7 @@ const Aboutus = () => {
         <h1 className="pb-[15px] text-[#2B3F58] font-bold text-[20px] lg:text-[24px]">
           Our Apartments
         </h1>
-        <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[12px]">
+        <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[16px] text-justify">
           Our fully furnished apartments are designed with you in mind. Each
           unit features modern décor, spacious living areas, fully equipped
           kitchens, and high-speed internet as well as a private workspace.
