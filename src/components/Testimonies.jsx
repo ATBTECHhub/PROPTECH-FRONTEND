@@ -25,7 +25,7 @@ const Testimonies = () => {
             I had an incredible stay at Shortment Service Apartment. The
             apartment was clean, modern, and had all the amenities I needed.
             Highly recommend it for both short and long stays!
-          </p><br />
+          </p><br /><br />
           <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
             2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
             <IoIosStar className="text-[#FFA92C]" />{" "}
@@ -65,7 +65,7 @@ const Testimonies = () => {
             equipped kitchen and laundry facilities were a lifesaver. The view
             from the balcony was stunning, and the gym was well-maintained.
             Perfect for business travelers.
-          </p>
+          </p><br />
           <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
             2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
             <IoIosStar className="text-[#FFA92C]" />{" "}
