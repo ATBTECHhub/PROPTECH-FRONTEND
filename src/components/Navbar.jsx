@@ -30,13 +30,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-[75px] fixed p-[15px] w-full z-50 ${
-        colorChange ? "bg-black" : "bg-none"
+      className={`h-[75px] fixed md:bg-black bg-[#FFFFFF] p-[15px] w-full z-50 ${
+        colorChange ? "md:bg-black" : "bg-none"
       }`}
     >
       <div className="flex justify-between items-center sm:gap-[15px] container">
         <img src={logo} alt="logo" className="md:block hidden" />
-        <img src={logos} alt="logo" className="block md:hidden" />
+        <Link to="/">
+          <img src={logos} alt="logo" className="block md:hidden" />
+        </Link>
 
         <ul className="lg:flex gap-[32px] hidden text-white">
           <li>
@@ -68,9 +70,9 @@ const Navbar = () => {
 
         <button className="lg:hidden flex justify-end" onClick={toggleNavbar}>
           {isOpen ? (
-            <X className="text-white" />
+            <X className="text-black" />
           ) : (
-            <Menu className="text-white" />
+            <Menu className="text-black" />
           )}
         </button>
       </div>

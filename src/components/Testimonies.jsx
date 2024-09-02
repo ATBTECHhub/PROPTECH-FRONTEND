@@ -26,7 +26,7 @@ const Testimonies = () => {
             apartment was clean, modern, and had all the amenities I needed.
             Highly recommend it for both short and long stays!
           </p><br /><br />
-          <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
+          <p className="ml-auto text-[10px] md:text-[12px] text-[#2B3F58] flex gap-2 items-center">
             2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
             <IoIosStar className="text-[#FFA92C]" />{" "}
             <IoIosStar className="text-[#FFA92C]" />

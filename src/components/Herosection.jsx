@@ -9,7 +9,7 @@ const Herosection = () => {
           Find Your Perfect Shortlet <br />
           In Nigeria
         </h1>
-        <p className="pt-[10px] pb-[10px] text-sm md:text-base">
+        <p className="pt-[10px] pb-[10px] text-[10px] font-bold md:text-base">
           Discover comfortable and affordable apartments in the heart of
           Nigeria's most vibrant cities
         </p>
