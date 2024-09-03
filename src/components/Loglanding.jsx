@@ -10,6 +10,8 @@ import logo2 from "../assets/logo2.svg";
 import man from "../assets/man.svg";
 import { IoIosStar } from "react-icons/io";
 import { FaMessage } from "react-icons/fa6";
+import logos from "../assets/logos2.svg";
+
 
 
 // import cover from "../assets/cover.svg";
@@ -27,14 +29,18 @@ const Loglanding = () => {
   return (
     <div className="">
       <nav
-        className={`h-[75px] fixed w-full z-[2] flex justify-center ${
-          colorChange ? "bg-black" : "bg-none"
+        className={`h-[80px] fixed md:bg-black bg-[#ffffff] w-full z-[2] flex justify-center ${
+          colorChange ? "md:bg-black" : "bg-none"
         }
 `}
       >
-        <div className="container flex justify-between items-center sm:gap-[15px]">
-          <img src={logo} alt="logo" className="sm:hidden md:block" />
-          {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
+        <div className="container flex justify-between items-center gap-[17px] md:gap-[15px]">
+          <img
+            src={logo}
+            alt="logo"
+            className="hidden md:block md:w-[179px] md:h-[42px] w-[10px] h-[35px]"
+          />
+          <img src={logos} alt="logo" className="block md:hidden container" />
 
           <ul className="hidden lg:flex gap-[32px] text-white ">
             <li>
@@ -44,16 +50,26 @@ const Loglanding = () => {
               <Link to="/explore">Function as a host</Link>
             </li>
           </ul>
-          <div className="relative inline-block border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] w-[100px]">
-            <label htmlFor="reserve" className="flex items-center">
-              <img src={man} alt="profile" className="w-8 h-8" />
+          <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] h-[30px] w-[100px]">
+            <label
+              htmlFor="reserve"
+              className="flex-grow text-white text-xs leading-3"
+            >
+              <img
+                src={man}
+                alt="profile"
+                className="md:w-8 md:h-8 w-[25px] h-[25px]"
+              />
             </label>
             <select
               name="reserve"
               id="reserve"
               className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
             >
-              <option value="One Bedroom" className="text-xs py-2 px-4">
+              <option
+                value="One Bedroom"
+                className="text-xs py-2 px-4 m-10 bg-none"
+              >
                 Handlling Bookings
               </option>
               <option value="Two Bedroom" className="text-xs py-2 px-4">
@@ -79,13 +95,13 @@ const Loglanding = () => {
             Find Your Perfect Shortlet <br />
             In Nigeria
           </h1>
-          <p className="pt-[10px] pb-[10px] text-sm md:text-base">
+          <p className="pt-[10px] pb-[10px] text-[10px] font-bold md:text-base">
             Discover comfortable and affordable apartments in the heart of
             Nigeria's most vibrant cities
           </p>
         </div>
-        <div className="flex justify-center items-center px-4 md:px-[275px] w-full">
-          <form className="flex md:flex-row flex-col justify-center items-center gap-[10px] md:gap-[15px] border-white bg-white p-4 border rounded-lg w-full md:w-[800px] text-black">
+        <div className="flex justify-center items-center px-2 md:px-[275px] w-full ">
+          <form className="flex md:flex-row flex-col justify-center items-center gap-11 md:gap-[15px] border-white  bg-white p-4 border rounded-[3rem] w-full md:w-[800px] text-black">
             <div className="flex flex-col w-full">
               <label
                 htmlFor="location"
@@ -98,10 +114,15 @@ const Loglanding = () => {
                 id="location"
                 className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
               >
-                <option value="Lagos">Select Location</option>
-                <option value="Abeokuta" placeholder="Nigeria">
-                  Abeokuta
+                <option value="" disabled selected hidden>
+                  Select Location
                 </option>
+                <option value="Lagos">
+                  Lagos
+                  <br /> Nigeria
+                </option>
+                <option value="Abuja">Abuja, Nigeria</option>
+                <option value="Abeokuta">Abeokuta, Nigeria</option>
               </select>
             </div>
 
@@ -127,48 +148,42 @@ const Loglanding = () => {
                 htmlFor="host"
                 className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
               >
-                Function as a Host
+                Number of Beds
               </label>
               <select
                 name="host"
                 id="host"
                 className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
               >
-                <option value="Yes">Select Option</option>
+                <option value="Yes">Select number of beds </option>
                 <option value="No">No</option>
               </select>
             </div>
 
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="reserve"
-                className="mb-2 font-semibold text-[#2B3F58] text-[12px] text-left md:text-[14px]"
-              >
-                Reserve a Space
-              </label>
-              <select
-                name="reserve"
-                id="reserve"
-                className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
-              >
-                <option value="One Bedroom">Select Option</option>
-                <option value="Two Bedroom">Two Bedroom</option>
-              </select>
+            <div className="flex flex-col w-full items-center">
+              <Link>
+                <p className="flex gap-[14px] bg-[#4C4989] px-[14px] md:px-[26px] py-[12px] border rounded-[50px] md:rounded-[30px] w-[194px] md:w-auto text-white items-center">
+                  <CiSearch className="text-white" />
+                  <b className="text-[16px]">Search</b>
+                </p>
+              </Link>
             </div>
           </form>
         </div>
       </section>
-
-      <div className="text-center items-center flex flex-col pt-[10px] pb-[50px] text-black">
-        <h1 className="text-[2rem] leading-12 pt-[73px] text-[#2B3F58] font-semibold">
+      <div className="flex flex-col items-center px-4 pt-[10px] pb-[50px] text-black text-center">
+        <h1 className="pt-[30px] md:pt-[73px] font-bold text-[#2B3F58] text-[1.2rem] md:text-[2rem] leading-12">
           Featured Accomodation
         </h1>
-        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[1.5rem]">
+        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[0.9rem] md:text-[1.5rem]">
           Experience Comfort and Luxury in Everystay
         </p>
-        <p className="text-[#2B3F58] border border-[#2B3F58] rounded-[30px] px-[26px] py-[12px] flex gap-[5px]">
+        <p className="flex gap-[5px] border-[#2B3F58] px-[16px] md:px-[26px] py-[12px] border rounded-[10px] md:rounded-[30px] w-full md:w-auto text-[#2B3F58]">
           <CiSearch className="text-[#2B3F58]" />
-          <b>Search</b> for an apartment, packages, or add-one
+          <b>Search</b>
+          <span className="md:inline hidden">
+            for an apartment, packages, or add-one
+          </span>
         </p>
       </div>
       <section className="grid grid-cols-1 gap-[20px] text-[#2B3F58] m-[20px] sm:grid-cols-2 lg:grid-cols-3 sm:gap-[30px] lg:gap-[41px] sm:m-[50px] lg:m-[75px] container">
@@ -208,7 +223,7 @@ const Loglanding = () => {
           <Button text="View More" />
         </Link>
       </section>
-      <section className="grid lg:grid-cols-2 container items-center gap-10 mb-[15px] ">
+      <section className="grid lg:grid-cols-2 container items-center gap-10 m-[5px]">
         <div className="text-center sm:text-left sm:order-1">
           <h1 className="font-bold font-7xl leading-12 text-[#2B3F58] lg:text-[32px] sm:text-[24px]">
             we do our best to ensure we provide{" "}
@@ -224,39 +239,39 @@ const Loglanding = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-[10px] text-[#2B3F58] mt-[40px] sm:mt-[75px] sm:gap-2 items-center sm:order-2 pb-[10px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 text-[#2B3F58] mt-[40px] sm:mt-[75px] sm:gap-2 items-center sm:order-2 pb-[10px]">
           {icons.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col border-white border-[4px] rounded-[10px] bg-white sm:w-[150px] h-[170px] shadow-2xl items-center mx-auto sm:m-[15px]"
+              className="flex flex-col border-white border-[4px] m-2 sm:m-2 rounded-[10px] bg-white sm:w-[150px] h-[170px] shadow-2xl items-center mx-auto"
             >
               <img src={item.image} alt="" className="p-[40px]" />
 
-              <p className="text-[#2B3F58] sm:text-[0.8rem] font-[16px] pb-[10px]">
+              <p className="text-[#2B3F58] text-[12px] font-medium sm:text-[0.7rem] pb-[10px]">
                 {item.content}
               </p>
             </div>
           ))}
         </div>
       </section>
-      <section className="flex flex-col lg:grid lg:grid-cols-2 container items-center gap-10 p-4 lg:p-0 pt-[20px]">
+      <section className="flex flex-col lg:grid lg:grid-cols-2 container items-center gap-10 p-4 lg:p-0 pt-[20px] mt-[40px]">
         <div className="flex justify-center mb-8 lg:mb-0">
           <div
-            className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-[450px]  shadow-2xl items-center"
+            className="flex flex-col border-white border-[10px] lg:rounded-[30px] rounded:[20px] bg-white
+      w-full lg:h-[450px] h-auto  shadow-2xl items-center"
           >
             <img
               src={logo2}
               alt="about us logo"
-              className="w-full h-full object-contain p-4"
+              className="w-full lg:h-full object-contain p-4"
             />
           </div>
         </div>
-        <div className="text-center lg:text-left">
-          <h1 className="pb-[15px] text-[#2B3F58] font-bold text-xl lg:text-[24px]">
+        <div className="text-left">
+          <h1 className="pb-[15px] text-[#2B3F58] font-bold text-[20px] lg:text-[24px]">
             About Us
           </h1>
-          <p className="pb-[15px] text-[#2B3F58] text-base lg:text-[12px] sm:text-[10px]">
+          <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[16px] sm:text-[10px] text-justify">
             Welcome to Shortment Service Apartment, where comfort meets
             convenience. Nestled in the heart of Nigeria, our service apartments
             offer a perfect blend of home-like comfort and modern amenities,
@@ -267,10 +282,10 @@ const Loglanding = () => {
             and memorable. With a focus on exceptional service and attention to
             detail, we strive to exceed your expectations.
           </p>
-          <h1 className="pb-[15px] text-[#2B3F58] font-bold text-xl lg:text-[24px]">
+          <h1 className="pb-[15px] text-[#2B3F58] font-bold text-[20px] lg:text-[24px]">
             Our Apartments
           </h1>
-          <p className="pb-[15px] text-[#2B3F58] text-base lg:text-[12px]">
+          <p className="pb-[15px] text-[#2B3F58] text-[12px] lg:text-[16px] text-justify">
             Our fully furnished apartments are designed with you in mind. Each
             unit features modern décor, spacious living areas, fully equipped
             kitchens, and high-speed internet as well as a private workspace.
@@ -278,16 +293,22 @@ const Loglanding = () => {
             benefits of hotel-like services, including housekeeping, 24/7
             support, security, and more.
           </p>
+          <Link
+            to="/readmore"
+            className="flex justify-end mt-4 col-span-1 sm:col-span-2 lg:col-span-3"
+          >
+            <Button text="Read More" />
+          </Link>
         </div>
       </section>
-      <section className="text-center items-center flex flex-col pt-[10px] pb-[50px]">
+      <section className="text-center items-center flex flex-col pt-[10px] pb-[50px] m-[30px]">
         <div>
-          <h1 className="pb-[15px] pt-[20px] font-bold text-[#2B3F58]">
+          <h1 className="pb-[15px] pt-[20px] text-[30px] font-bold text-[#2B3F58]">
             Testimonies
           </h1>
           <p className="text-[#2B3F58] text-[14px]">
-            "Great value for you money! our apartments are always exactly what
-            we showcase online"
+            "Great value for your money! Our apartments are always exactly what
+            we showcase online."
           </p>
         </div>
 
@@ -299,11 +320,35 @@ const Loglanding = () => {
             <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
               Adeola John
             </h1>
-            <p className="pb-[25px]  text-[#2B3F58] text-[14px] leading-6">
+            <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
               I had an incredible stay at Shortment Service Apartment. The
-              apartment was clean, modern and had all the amenities I needed.
+              apartment was clean, modern, and had all the amenities I needed.
               Highly recommend it for both short and long stays!
             </p>
+            <br />
+            <br />
+            <br />
+            <p className="ml-auto text-[10px] md:text-[12px] text-[#2B3F58] flex gap-2 items-center">
+              2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
+              <IoIosStar className="text-[#FFA92C]" />{" "}
+              <IoIosStar className="text-[#FFA92C]" />
+            </p>
+          </div>
+
+          <div
+            className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
+      w-full h-full shadow-2xl items-center p-[30px]"
+          >
+            <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+              Julius Jimmy
+            </h1>
+            <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
+              Fantastic location and excellent service! The apartment was
+              spacious and comfortable, making me feel right at home. The nearby
+              restaurants and shops were an added bonus. Will definitely stay
+              here again on my next visit.
+            </p>
+            <br />
             <br />
             <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
               2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
@@ -311,87 +356,72 @@ const Loglanding = () => {
               <IoIosStar className="text-[#FFA92C]" />
             </p>
           </div>
+
           <div
-            className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-full shadow-2xl items-center p-[30px]"
-          >
-            <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
-              Julius Jimmy
-            </h1>
-            <p className="pb-[25px]  text-[#2B3F58] text-[14px] leading-6">
-              Fantastic location and excellent service! The apartment was
-              spacious and comfortable, making me feel right at home. The nearby
-              restaurants and shops were an added bonus. Will definitely stay
-              here again on my next visit.
-            </p>
-            <p className="ml-auto text-[12px] text-[#2B3F58] flex items-center gap-2">
-              13th April 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
-              <IoIosStar className="text-[#FFA92C]" />{" "}
-              <IoIosStar className="text-[#FFA92C]" />
-            </p>
-            <br />
-          </div>
-          <div
-            className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
+            className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
       w-full h-full shadow-2xl items-center p-[30px]"
           >
             <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
               Andrew Blessing
             </h1>
-            <p className="pb-[25px]  text-[#2B3F58] text-[14px] leading-6">
+            <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6 text-left">
               One of the best service apartments I've ever stayed in. The fully
               equipped kitchen and laundry facilities were a lifesaver. The view
               from the balcony was stunning, and the gym was well-maintained.
-              Perfect for business travelers.
+              Perfect for business travelers.
             </p>
-            <p className="ml-auto text-[12px] text-[#2B3F58] flex items-center gap-2">
-              13th April 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
+            <br />
+            <br />
+            <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
+              2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
               <IoIosStar className="text-[#FFA92C]" />{" "}
               <IoIosStar className="text-[#FFA92C]" />
             </p>
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-2 container items-center gap-10 pt-[30px] bg-[url('/src/assets/room7.svg')] bg-cover bg-center h-auto md:h-screen">
-        <div
-          className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-       w-full sm:w-[300px] sm:h-[60px] md:w-[445px] md:h-[315px] shadow-2xl items-center p-[30px] container"
-        >
-          <p className="pb-[5px]  text-[#2B3F58] sm:text-[10px] md:text-[14px] sm:leading-4 md:leading-6 text-center">
-            Increasing earnings on Shortment
-          </p>
-          <h1 className="pb-[20px] pt-[20px] font-bold text-[#2B3F58] text-[16px] sm:text-[14px] md:text-[18px] text-center">
-            Function as a host
-          </h1>
-          <p className="pb-[20px]  text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] leading-5 sm:leading-4 md:leading-6 text-center">
-            Our agents will verify your apartments to ascertain
-            <br />
-            and ensure it is what you showcased it to be
-            <br /> before it can be approved
-          </p>
-          <Link to="/view more" className="">
-            <Button text="Get Started" />
-          </Link>
-        </div>
+      <section className=" py-[30px] bg-[url('/src/assets/room7.svg')] bg-cover bg-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 container gap-4">
+          <div
+            className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
+       max-w-[445px]  shadow-2xl items-center p-[30px] container"
+          >
+            <p className="pb-[5px]  text-[#2B3F58] sm:text-[10px] md:text-[14px] sm:leading-4 md:leading-6 text-center">
+              Increasing earnings on Shortment
+            </p>
+            <h1 className="pb-[20px] pt-[20px] font-bold text-[#2B3F58] text-[16px] sm:text-[14px] md:text-[18px] text-center">
+              Function as a host
+            </h1>
+            <p className="pb-[20px]  text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] leading-5 sm:leading-4 md:leading-6 text-center">
+              Our agents will verify your apartments to ascertain
+              <br />
+              and ensure it is what you showcased it to be
+              <br /> before it can be approved
+            </p>
+            <Link to="/view more" className="">
+              <Button text="Get Started" />
+            </Link>
+          </div>
 
-        <div
-          className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-       w-full sm:w-[300px] sm:h-[60px] md:w-[445px] md:h-[315px] shadow-2xl items-center p-[30px] sm:p-[30px] container"
-        >
-          <p className="pb-[5px] text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] sm:leading-4 md:leading-6 text-center">
-            We look forward to welcoming you
-          </p>
-          <h1 className="pb-[20px] pt-[20px] font-bold text-[#2B3F58] text-[16px] sm:text-[14px] md:text-[18px] text-center">
-            Reserve a space
-          </h1>
-          <p className="pb-[20px] text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] leading-5 sm:leading-4 md:leading-6 text-center">
-            Thank you for choosing shortment service
-            <br /> apartment for your upcoming stay. We are <br />
-            delighed to assist you with your reservation
-          </p>
-          <Link to="/view more" className="">
-            <Button text="Get Started" />
-          </Link>
+          <div
+            className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
+        max-w-[445px] shadow-2xl items-center p-[30px] sm:p-[30px] container"
+          >
+            <p className="pb-[5px] text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] sm:leading-4 md:leading-6 text-center">
+              We look forward to welcoming you
+            </p>
+            <h1 className="pb-[20px] pt-[20px] font-bold text-[#2B3F58] text-[16px] sm:text-[14px] md:text-[18px] text-center">
+              Reserve a space
+            </h1>
+            <p className="pb-[20px] text-[#2B3F58] text-[12px] sm:text-[10px] md:text-[14px] leading-5 sm:leading-4 md:leading-6 text-center">
+              Thank you for choosing shortment service
+              <br /> apartment for your upcoming stay. We are <br />
+              delighed to assist you with your reservation
+            </p>
+            <Link to="/view more" className="">
+              <Button text="Get Started" />
+            </Link>
+          </div>
         </div>
       </section>
       <footer className="bg-[#12082D]">

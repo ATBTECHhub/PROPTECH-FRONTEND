@@ -8,6 +8,7 @@ import { rooms, stay } from "../constants/data";
 import Button from "./Button";
 import { FaMessage } from "react-icons/fa6";
 import logo from "../assets/logos2.svg";
+import { FaArrowLeft } from "react-icons/fa";
 
 
 
@@ -22,7 +23,7 @@ const Apartment = () => {
           <img src={logos} alt="logo" className="sm:hidden md:block" />
           {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
 
-          <ul className="hidden lg:flex gap-[32px] text-[#2B3F58] ">
+          <ul className="hidden lg:flex gap-[32px] text-[#4C4989] ">
             <li>
               <Link to="/">Reserve a space</Link>
             </li>
@@ -30,16 +31,26 @@ const Apartment = () => {
               <Link to="/explore">Function as a host</Link>
             </li>
           </ul>
-          <div className="relative inline-block border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] w-[100px]">
-            <label htmlFor="reserve" className="flex items-center">
-              <img src={man} alt="profile" className="w-8 h-8" />
+          <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-[90px] bg-[#4C4989] border-[#4C4989] md:h-[55px] h-[30px] md:w-[120px] w-[100px]">
+            <label
+              htmlFor="reserve"
+              className="flex-grow text-white text-xs leading-3"
+            >
+              <img
+                src={man}
+                alt="profile"
+                className="md:w-8 md:h-8 w-[25px] h-[25px]"
+              />
             </label>
             <select
               name="reserve"
               id="reserve"
               className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
             >
-              <option value="One Bedroom" className="text-xs py-2 px-4">
+              <option
+                value="One Bedroom"
+                className="text-xs py-2 px-4 m-10 bg-none"
+              >
                 Handlling Bookings
               </option>
               <option value="Two Bedroom" className="text-xs py-2 px-4">
@@ -59,22 +70,22 @@ const Apartment = () => {
         </div>
       </nav>
 
-      <div className="text-center items-center flex flex-col pt-[100px] pb-[50px] text-[#2B3F58]">
-        <h1 className="text-[1.2rem] md:text-[2rem] leading-12 pt-[30px] md:pt-[73px] text-[#2B3F58] font-bold">
+      <div className="flex flex-col items-center px-4 pt-[10px] pb-[50px] text-black text-center ">
+        <FaArrowLeft className="mr-2" />
+        <h1 className="pt-[30px] md:pt-[73px] font-bold text-[#2B3F58] text-[16px] md:text-[26px] leading-12 mt-[94px] md:mt-[160px]">
           Vacant apartments found in Lagos
         </h1>
-        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[0.9rem] md:text-[1.5rem]">
-          Experience Comfort and Luxury in Every stay
+        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[12px] md:text-[20px]">
+          Experience Comfort and Luxury in Everystay
         </p>
-        <p className="text-[#2B3F58] border border-[#2B3F58] md:rounded-[30px] rounded-[10px] md:px-[26px] px-[16px] py-[12px] flex gap-[5px] w-full md:w-auto">
+        <p className="flex gap-[5px] border-[#2B3F58] px-[16px] md:px-[26px] py-[12px] border rounded-[10px] md:rounded-[30px] w-full md:w-auto text-[#2B3F58]">
           <CiSearch className="text-[#2B3F58]" />
           <b>Search</b>
-          <span className="hidden md:inline">
+          <span className="md:inline hidden">
             for an apartment, packages, or add-one
           </span>
         </p>
       </div>
-
       <div className="grid grid-cols-1 gap-[20px] text-[#2B3F58] m-[5px] sm:grid-cols-2 lg:grid-cols-3 sm:gap-[30px] lg:gap-[41px] sm:m-[50px] lg:m-[75px] container">
         {stay.map((item, index) => (
           <div key={index} className="flex flex-col">
@@ -109,7 +120,6 @@ const Apartment = () => {
           </button>
         </div>
       </div>
-
       <div className="text-center items-center flex flex-col pt-[10px] pb-[10px] text-[#2B3F58]">
         <h1 className="text-[1.2rem] md:text-[20px] leading-12 pt-[10px] md:pt-[10px] text-[#2B3F58] font-bold">
           Site of attractions in Lagos
@@ -119,43 +129,46 @@ const Apartment = () => {
           Here are some notable ones:
         </p>
 
-        <section className="text-center items-center flex flex-col pt-[10px] pb-[50px]">
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 container items-center gap-10 pt-[30px]">
+        <section className="text-center items-center gap-[30px] flex flex-col pt-[10px] pb-[20px] mr-[10px]">
+          <div className="">
+            <div className="grid grid-cols-1 md:grid-cols-3 container items-center gap-[100px] pt-[10px]">
               <div
                 className="flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-full shadow-2xl items-center p-[30px]"
+      w-[300px] h-[213px] shadow-2xl items-center p-[30px]"
               >
-                <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+                <h1 className="pb-[16px] text-[#2B3F58] font-bold text-center md:text-[17px] text-[15px]">
                   Lekki Conservation centre
                 </h1>
-                <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+                <p
+                  className="pb-[15px] text-[#2B3F58] text-[12px] leading-6 text-center
+                "
+                >
                   A natural reserve offering a conopy walkway, nature trails and
                   the chance to see wildlife in their natural habitat.
                 </p>
               </div>
 
               <div
-                className="md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-full shadow-2xl items-center p-[30px]"
+                className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
+      w-[300px] h-[213px] shadow-2xl items-center p-[30px]"
               >
-                <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+                <h1 className="pb-[16px] text-[#2B3F58] font-bold text-center md:text-[18px] text-[15px]">
                   Nike Art Gallery
                 </h1>
-                <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+                <p className="pb-[15px] text-[#2B3F58] text-[12px] leading-6 text-center">
                   One of the largest art gallery in West Africa, showcasing
                   traditional and contemporary African art.
                 </p>
               </div>
 
               <div
-                className="md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      w-full h-full shadow-2xl items-center p-[30px]"
+                className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
+      w-[300px] h-[213px] shadow-2xl items-center p-[30px]"
               >
-                <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+                <h1 className="pb-[16px] text-[#2B3F58] font-bold text-center md:text-[17px] text-[15px]">
                   Tarkwa Bay Beach
                 </h1>
-                <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+                <p className="pb-[15px] text-[#2B3F58] text-[12px] leading-6 text-center">
                   A popular beach accessible by boat, known for it's calm waters
                   and beautiful screnery.
                 </p>
@@ -164,13 +177,13 @@ const Apartment = () => {
             <div className="flex justify-center items-center gap-[10px] m-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[40px]">
                 <div
-                  className="md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      shadow-2xl items-center p-[10px] w-full max-w-[400px]"
+                  className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
+      w-[300px] h-[213px] shadow-2xl items-center p-[30px]"
                 >
-                  <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+                  <h1 className="pb-[16px] text-[#2B3F58] font-bold text-center md:text-[17px] text-[15px]">
                     Eko Atlantic City
                   </h1>
-                  <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+                  <p className="pb-[15px] text-[#2B3F58] text-[12px] leading-6 text-center">
                     A planned city built on a land reclaimed from the Atlantic
                     Ocean, featuring modern infrastructure and development.
                   </p>
@@ -178,12 +191,12 @@ const Apartment = () => {
 
                 <div
                   className="hidden md:flex flex-col border-white border-[10px] rounded-[30px] bg-white
-      shadow-2xl items-center p-[10px] w-full max-w-[400px]"
+      w-[300px] h-[213px] shadow-2xl items-center p-[30px]"
                 >
-                  <h1 className="pb-[25px] text-[#2B3F58] font-bold text-left">
+                  <h1 className="pb-[16px] text-[#2B3F58] font-bold text-center md:text-[17px] text-[15px]">
                     Ikeja City Mall
                   </h1>
-                  <p className="pb-[25px] text-[#2B3F58] text-[14px] leading-6">
+                  <p className="pb-[15px] text-[#2B3F58] text-[12px] leading-6 text-center">
                     A large shopping mall with a variety of retail stores,
                     eateries, and entertainment options.
                   </p>
@@ -193,7 +206,7 @@ const Apartment = () => {
           </div>
         </section>
       </div>
-      <div className="flex items-center justify-center m-[30px]">
+      <div className="flex items-center justify-center m-[10px]">
         <img src={map} alt="logo" />
       </div>
       <footer className="bg-[#12082D]">

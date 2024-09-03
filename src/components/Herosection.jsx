@@ -28,10 +28,12 @@ const Herosection = () => {
               id="location"
               className="bg-transparent border-none w-full text-[#2B3F58] text-[10px] md:text-[12px] placeholder-gray-500"
             >
-              <option value="Lagos">Select Location</option>
-              <option value="Abeokuta" placeholder="Nigeria">
-                Abeokuta
+              <option value="" disabled selected hidden>
+                Select Location
               </option>
+              <option value="Lagos">Lagos<br /> Nigeria</option>
+              <option value="Abuja">Abuja, Nigeria</option>
+              <option value="Abeokuta">Abeokuta, Nigeria</option>
             </select>
           </div>
 

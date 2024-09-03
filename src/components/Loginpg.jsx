@@ -143,7 +143,7 @@ const Loginpg = () => {
         </p>
       </div>
 
-      <footer className="bg-[#12082D]">
+      <footer className="bg-[#12082D] md:block hidden">
         <div className="relative z-10 flex justify-center pt-20 lg:pt-24">
           <div className="mx-auto container">
             <div className="flex flex-wrap -mx-4">

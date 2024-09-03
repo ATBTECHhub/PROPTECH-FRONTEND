@@ -34,7 +34,7 @@ const Apartment1 = () => {
           <img src={logos} alt="logo" className="sm:hidden md:block" />
           {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
 
-          <ul className="hidden lg:flex gap-[32px] text-[#2B3F58] ">
+          <ul className="hidden lg:flex gap-[32px] text-[#4C4989] ">
             <li>
               <Link to="/">Reserve a space</Link>
             </li>
@@ -42,16 +42,26 @@ const Apartment1 = () => {
               <Link to="/explore">Function as a host</Link>
             </li>
           </ul>
-          <div className="relative inline-block border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] w-[100px]">
-            <label htmlFor="reserve" className="flex items-center">
-              <img src={man} alt="profile" className="w-8 h-8" />
+          <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-[90px] bg-[#4C4989] border-[#4C4989] md:h-[55px] h-[30px] md:w-[120px] w-[100px]">
+            <label
+              htmlFor="reserve"
+              className="flex-grow text-white text-xs leading-3"
+            >
+              <img
+                src={man}
+                alt="profile"
+                className="md:w-8 md:h-8 w-[25px] h-[25px]"
+              />
             </label>
             <select
               name="reserve"
               id="reserve"
               className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
             >
-              <option value="One Bedroom" className="text-xs py-2 px-4">
+              <option
+                value="One Bedroom"
+                className="text-xs py-2 px-4 m-10 bg-none"
+              >
                 Handlling Bookings
               </option>
               <option value="Two Bedroom" className="text-xs py-2 px-4">
@@ -78,7 +88,7 @@ const Apartment1 = () => {
         </h1>
       </div>
 
-      <div className="container grid grid-cols-2 w-5/5 gap-[56px]">
+      <div className="container grid md:grid-cols-2 w-5/5 gap-[56px]">
         <div className="mt-0">
           <img src={Component} alt="framme" className="mt-[20px] mb-0" />
           <p className="mt-0 p-[14px] text-[#2B3F58]">
@@ -282,30 +292,36 @@ const Apartment1 = () => {
         </div>
       </div>
 
-      <div className="border bg-[#F0E8FF] w-[688px] h-auto p-5 ml-[190px] mt-[53px] ">
-        <h1 className="flex justify-center p-4 item-center font-bold text-[20px] text-[#2B3F58]">
+      <div className="border bg-[#F0E8FF] w-full md:w-[688px] h-auto p-5 mx-auto mt-[20px] md:mt-[53px]">
+        <h1 className="flex justify-center p-4 items-center font-bold text-[16px] md:text-[20px] text-[#2B3F58]">
           NOTE:
         </h1>
-        <div className="flex gap-[51px] text-justify">
-          <img src={signal} alt="sign" />
-          <p className="text-[14px] text-justify text-[#2B3F58]">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-[51px] text-justify">
+          <img src={signal} alt="sign" className="mx-auto md:mx-0" />
+          <p className="text-[12px] md:text-[14px] text-justify text-[#2B3F58]">
             The caution fee of ₦100,000 is a refundable security deposit
-            <br />
+            <br className="hidden md:block" />
             intended to cover any potential damages or additional cleaning
-            <br />
+            <br className="hidden md:block" />
             required after your stay. The caution fee will be refunded in full
-            <br />
-            upon check-out, provided there are no damages or excessive <br />
-            cleaning required. The refund will be processed within 3 days <br />
+            <br className="hidden md:block" />
+            upon check-out, provided there are no damages or excessive
+            <br className="hidden md:block" />
+            cleaning required. The refund will be processed within 3 days
+            <br className="hidden md:block" />
             after your departure.
-            <br /> <br />
+            <br className="hidden md:block" />
+            <br />
             An inspection of the apartment will be conducted before
-            <br />
-            refunding the caution fee. Please ensure that any issues or <br />
-            damages are reported immediately to our management team <br />
-            during your stay. In the event of damages or the need for <br />
+            <br className="hidden md:block" />
+            refunding the caution fee. Please ensure that any issues or
+            <br className="hidden md:block" />
+            damages are reported immediately to our management team
+            <br className="hidden md:block" />
+            during your stay. In the event of damages or the need for
+            <br className="hidden md:block" />
             additional cleaning, the cost will be deducted from the caution
-            <br />
+            <br className="hidden md:block" />
             fee. Any remaining balance will be refunded to you.
           </p>
         </div>

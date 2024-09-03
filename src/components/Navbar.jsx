@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-[75px] fixed md:bg-black bg-[#FFFFFF] p-[15px] w-full z-50 ${
+      className={`h-[80px] fixed md:bg-black bg-[#FFFFFF] p-[15px] w-full z-50 ${
         colorChange ? "md:bg-black" : "bg-none"
       }`}
     >
