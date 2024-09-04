@@ -45,7 +45,7 @@ const Testimonies = () => {
             and comfortable, making me feel right at home. The nearby
             restaurants and shops were an added bonus. Will definitely stay here
             again on my next visit.
-          </p><br /><br />
+          </p><br /><br /><br />
           <p className="ml-auto text-[12px] text-[#2B3F58] flex gap-2 items-center">
             2nd March 2024 <IoIosStar className="text-[#FFA92C]" />{" "}
             <IoIosStar className="text-[#FFA92C]" />{" "}
