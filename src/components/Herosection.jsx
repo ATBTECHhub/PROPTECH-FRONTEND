@@ -15,7 +15,7 @@ const Herosection = () => {
         </p>
       </div>
       <div className="flex justify-center items-center px-2 md:px-[275px] w-full ">
-        <form className="flex md:flex-row flex-col justify-center items-center gap-11 md:gap-[15px] border-white  bg-white p-4 border rounded-[3rem] w-full md:w-[800px] text-black">
+        <form className="flex md:flex-row flex-col justify-center items-center gap-11 md:gap-[15px] border-white  bg-white p-4 border rounded-[3rem] w-full md:w-[800px] text-black pl-[30px] pr-[30px]">
           <div className="flex flex-col w-full">
             <label
               htmlFor="location"

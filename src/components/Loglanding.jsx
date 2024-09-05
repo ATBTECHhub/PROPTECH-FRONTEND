@@ -50,7 +50,7 @@ const Loglanding = () => {
               <Link to="/explore">Function as a host</Link>
             </li>
           </ul>
-          <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] h-[30px] w-[100px]">
+          <div className="relative inline-flex md:w-[150px]  md:h-[55px]  items-center gap-[3px] border p-2 rounded-3xl bg-[#4C4989] border-[#4C4989] h-[30px] w-[100px]">
             <label
               htmlFor="reserve"
               className="flex-grow text-white text-xs leading-3"
@@ -58,7 +58,7 @@ const Loglanding = () => {
               <img
                 src={man}
                 alt="profile"
-                className="md:w-8 md:h-8 w-[25px] h-[25px]"
+                className="md:w-[45px] md:h-[45px] w-[25px] h-[25px]"
               />
             </label>
             <select
