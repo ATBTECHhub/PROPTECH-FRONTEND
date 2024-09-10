@@ -1,303 +1,140 @@
-import React, { useState } from "react";
-import logos from "../assets/logos2.svg";
-import logo from "../assets/logo.svg";
-import mark from "../assets/mark.svg";
-import flag from "../assets/flag.svg";
-import quest from "../assets/quest.svg";
-import google from "../assets/google.svg";
+import React from "react";
 import { Link } from "react-router-dom";
-import captcha from "../assets/captcha.svg";
-import { FaRegEyeSlash, FaEye } from "react-icons/fa";
+import logos from "../assets/logos2.svg";
+import man from "../assets/man.svg";
+import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaMessage } from "react-icons/fa6";
-import { Axios } from "../config";
-import Request from "../lib/requests";
-import { SignupSchema } from "../schemas";
-import { useFormik } from "formik";
+import logo from "../assets/logos2.svg";
+import { rooms } from "../constants/data";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+const Bookflow = () => {
+     const navigate = useNavigate();
 
-const Signuppg = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setConfirmPasswordVisible(!confirmPasswordVisible);
-  };
-  const initialValues = {
-    profileName: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
-    confirmPassword: "",
-  };
-  const onSubmit = async (payload, actions) => {
-    try {
-      const res = await Axios.post(Request.signup, payload);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
-  };
-  const {
-    handleChange,
-    values,
-    handleBlur,
-    handleSubmit,
-    isSubmitting,
-    errors,
-    touched,
-  } = useFormik({
-    initialValues,
-    validationSchema: SignupSchema,
-    onSubmit,
-  });
-  const getError = (key) => {
-    return touched[key] && errors[key];
-  };
+     const handleSelectChange = (e) => {
+       if (e.target.value === "Favorite") {
+         navigate("/favoriteapartments");
+       }
+     };
   return (
     <section>
-      <nav className="bg-[#FFFFFF] md:bg-[#4C4989] flex justify-center h-[90px] border-b-[3px]">
-        <div className="container flex justify-between items-center">
-          <img src={logos} alt="logo" className="block md:hidden" />
-          <img src={logo} alt="logo" className="hidden md:block" />
-          <div className="flex gap-[20px] md:gap-[50px]">
-            <img src={flag} alt="flag" />
-            <img src={quest} alt="icon" />
-            <img src={mark} alt="mark" className="hidden md:block" />
+      <nav
+        className="h-[75px] fixed w-full z-[2] flex justify-cente bg-white border-b-[3px]
+      "
+      >
+        <div className="container flex justify-between items-center sm:gap-[15px]">
+          <Link to="/">
+            <img src={logos} alt="logo" className="sm:hidden md:block" />
+          </Link>
+          {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
+          <div className="flex items-center gap-[18px]">
+            <ul className="hidden lg:flex gap-[32px] text-[#4C4989] ">
+              {/* <li>
+              <Link to="/">Reserve a space</Link>
+            </li> */}
+              <li className="border-[1px] p-[15px] text-[16px] rounded-[10px] text-[#4C4989]">
+                <Link to="/explore">Function as a host</Link>
+              </li>
+              {/* <IoIosNotifications /> */}
+            </ul>
+            {/* <IoIosNotificationsOutline className="sm:hidden md:block md:text-[32px] md:text-[#4C4989]" /> */}
+            <IoIosNotificationsOutline className="hidden md:block md:text-[32px] md:text-[#4C4989]" />
+
+            <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-[90px] bg-[#4C4989] border-[#4C4989] md:h-[55px] h-[30px] md:w-[120px] w-[100px]">
+              <label
+                htmlFor="reserve"
+                className="flex-grow text-white text-xs leading-3"
+              >
+                <img
+                  src={man}
+                  alt="profile"
+                  className="md:w-8 md:h-8 w-[25px] h-[25px]"
+                />
+              </label>
+              <select
+                onChange={handleSelectChange}
+                name="reserve"
+                id="reserve"
+                className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
+              >
+                <option
+                  value="One Bedroom"
+                  className="text-xs py-2 px-4 m-10 bg-none"
+                >
+                  <Link to="/">Account</Link>
+                </option>
+                <option
+                  value="One Bedroom"
+                  className="text-xs py-2 px-4 m-10 bg-none"
+                >
+                  <Link to="/">Handle Bookings</Link>
+                </option>
+                <option value="Two Bedroom" className="text-xs py-2 px-4">
+                  Favorite
+                </option>
+
+                <option value="Two Bedroom" className="text-xs py-2 px-4">
+                  <Link to="/">Message</Link>
+                </option>
+                <option value="Two Bedroom" className="text-xs py-2 px-4">
+                  <Link to="/">Logout</Link>
+                </option>
+              </select>
+              <span className="absolute right-2 top-2 pointer-events-none text-white">
+                &#9662;
+              </span>
+            </div>
           </div>
         </div>
       </nav>
 
-      <div className="items-center flex flex-col text-center px-4 sm:px-2">
-        <h2 className="text-[1.2rem] sm:text-[1rem] font-bold text-[#2B3F58] pb-[21px] pt-[21px]">
-          Sign up for free to reserve your apartment
-        </h2>
+      <div className="flex flex-col items-center px-4 pt-[95px] pb-[50px] text-black text-center">
+        <h1 className="pt-[20px] md:pt-[73px] font-bold text-[#2B3F58] text-[1.2rem] md:text-[2rem] leading-12">
+          Favorite Apartments
+        </h1>
+        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[0.9rem] md:text-[1.5rem]">
+          Discover premium comfort and luxury in every stay.
+        </p>
       </div>
-
-      <div className="container flex flex-col items-center border-8 sm:border-4 rounded-[50px] sm:rounded-[30px] border-darkgrey h-auto sm:w-[550px] mt-[10px] p-[15px] bg-white gap-[16px] m-[15px] px-4 sm:px-2">
-        <form
-          className="flex flex-col w-full sm:w-full text-left gap-2 sm:gap-1"
-          onSubmit={handleSubmit}
-        >
-          <div>
-            <label
-              htmlFor="username"
-              className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal"
-            >
-              Username
-            </label>
-            <input
-              type="text"
-              name="profileName"
-              value={values.profileName}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              placeholder="Enter your profile name"
-              className={`w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px] ${
-                getError("profileName") ? "border border-red-500" : ""
-              }`}
-              // className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
-            />
-            <p className="text-red-500 text-sm font-medium">
-              {getError("profileName")}
-            </p>
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal mt-4"
-            >
-              Email
-            </label>
-            <input
-              type="text"
-              name="email"
-              value={values.email}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              className={`w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px] ${
-                getError("email") ? "border border-red-500" : ""
-              }`}
-              placeholder="Enter your email"
-            />
-            <p className="text-red-500 text-sm font-medium">
-              {getError("email")}
-            </p>
-          </div>
-          <div>
-            <label
-              htmlFor="phone"
-              className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal mt-4"
-            >
-              Phone number
-            </label>
-            <input
-              type="number"
-              name="phoneNumber"
-              value={values.phoneNumber}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              className={`w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px] ${
-                getError("phoneNumber") ? "border border-red-500" : ""
-              }`}
-              placeholder="+234"
-              // className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
-            />
-            <p className="text-red-500 text-sm font-medium">
-              {getError("phoneNumber")}
-            </p>
-          </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal flex justify-between mt-4"
-            >
-              Password
-              <span
-                className="flex items-center ml-auto gap-3 cursor-pointer"
-                onClick={togglePasswordVisibility}
-              >
-                {passwordVisible ? (
-                  <>
-                    <FaEye className="text-[#666666]" />
-                    Show
-                  </>
-                ) : (
-                  <>
-                    <FaRegEyeSlash className="text-[#666666]" />
-                    Hide
-                  </>
-                )}
-              </span>
-            </label>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              name="password"
-              value={values.password}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              className={`w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px] ${
-                getError("password") ? "border border-red-500" : ""
-              }`}
-              placeholder="Enter your password"
-              // className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
-            />
-            <p className="text-red-500 text-sm font-medium">
-              {getError("password")}
-            </p>
-          </div>
-          <div>
-            <label
-              htmlFor="confirmPassword"
-              className="text-[#2B3F58] text-[16px] sm:text-[14px] font-normal flex justify-between mt-4"
-            >
-              Confirm Password
-              <span
-                className="flex items-center ml-auto gap-3 cursor-pointer"
-                onClick={toggleConfirmPasswordVisibility}
-              >
-                {confirmPasswordVisible ? (
-                  <>
-                    <FaEye className="text-[#666666]" />
-                    Show
-                  </>
-                ) : (
-                  <>
-                    <FaRegEyeSlash className="text-[#666666]" />
-                    Hide
-                  </>
-                )}
-              </span>
-            </label>
-            <input
-              type={confirmPasswordVisible ? "text" : "password"}
-              name="confirmPassword"
-              value={values.confirmPassword}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              className={`w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px] ${
-                getError("confirmPassword") ? "border border-red-500" : ""
-              }`}
-              placeholder="Confirm your password"
-              // className="w-full h-[45px] sm:h-[40px] border-2 sm:border-[1.5px] border-darkgray rounded-[10px] sm:rounded-[8px] pl-[12px] sm:pl-[8px] text-[14px] sm:text-[12px]"
-            />
-            <p className="text-red-500 text-sm font-medium">
-              {getError("confirmPassword")}
-            </p>
-          </div>
-          <p className="text-left mt-2 text-[14px] sm:text-[12px] font-normal">
-            By creating an account, you agree to the{" "}
-            <Link to="/terms" className="text-blue-600 underline">
-              Terms of Use
-            </Link>{" "}
-            and{" "}
-            <Link to="/privacy" className="text-blue-600 underline">
-              Privacy Policy
-            </Link>
-          </p>
-
-          <div className="w-[250px] pb-[30px] sm:pb-[20px] text-left">
-            <p className="flex items-center border-2 sm:border-[1.5px] border-[#333333] rounded-[10px] sm:rounded-[8px] p-2 sm:p-1">
-              <input
-                type="checkbox"
-                className="mr-2 accent-green-500"
-                onChange={(e) => {
-                  e.target.style.accentColor = e.target.checked
-                    ? "green"
-                    : "#E5E5E5";
-                }}
-              />
-              I am not a robot
+      <div className="gap-[20px] sm:gap-[30px] lg:gap-[41px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:m-[75px] items-center justify-center text-[#2B3F58] container mb-[10px]">
+        {rooms.map((item, index) => (
+          <div key={index} className="flex flex-col relative">
+            <div className="relative">
               <img
-                src={captcha}
-                alt="captcha"
-                className="ml-[20px] sm:ml-[10px]"
+                src={item.image}
+                alt=""
+                className={`pb-[20px] sm:pb-[30px] lg:pb-[37px] ${
+                  index === rooms.length - 1 ? "last-image" : ""
+                }`}
               />
+              {index === rooms.length - 1 && (
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-50 pointer-events-none"></div>
+              )}
+            </div>
+            <p className="font-bold text-[#2B3F58] text-center sm:text-left leading-[27px]">
+              {item.header}
+            </p>
+            <p className="pt-[8px] pb-[10px] font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
+              {item.Location}
+            </p>
+            <p className="pt-[8px] pb-[10px] font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
+              {item.amenities}
+            </p>
+            <p className="font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
+              {item.price}
             </p>
           </div>
-          <div className=" flex justify-center items-center">
-            <button
-              className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center"
-              type="submit"
-            >
-              Sign Up
-            </button>
-          </div>
-        </form>
-        {/* 
-        <button
-          className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center"
-          type="submit"
+        ))}
+
+        <Link
+          to="/view more"
+          className="flex justify-center sm:justify-end col-span-1 sm:col-span-2 lg:col-span-3 mt-4"
         >
-          Sign Up
-        </button> */}
-
-        <div className="flex items-center w-full justify-center gap-2 sm:gap-1 mt-4">
-          <hr className="w-[80px] sm:w-[60px] h-[2px] border-2 sm:border-[1.5px] border-darkgrey" />
-          <p className="font-bold text-[16px] sm:text-[14px] text-[#2B3F58]">
-            Or
-          </p>
-          <hr className="w-[80px] sm:w-[60px] h-[2px] border-2 sm:border-[1.5px] border-darkgrey" />
-        </div>
-
-        <p className="text-[#2B3F58] border-2 sm:border-[1.5px] border-darkgrey rounded-[10px] sm:rounded-[8px] px-[16px] py-[8px] flex gap-[10px] justify-center w-full sm:w-full h-[40px] sm:h-[35px] items-center">
-          <img src={google} alt="flag" />
-          Sign up with Google
-        </p>
-
-        <p className="text-[#2B3F58] font-normal text-[14px] sm:text-[12px] pt-[24px]">
-          Already have an account?{" "}
-          <Link to="/login" className="text-[#4C4898]">
-            Log in
-          </Link>
-        </p>
+          <Button text="View More" />
+        </Link>
       </div>
 
-      <footer className="bg-[#12082D] md:block hidden ">
+      <footer className="bg-[#12082D]">
         <div className="relative z-10 flex justify-center pt-20 lg:pt-24">
           <div className="mx-auto container">
             <div className="flex flex-wrap -mx-4">
@@ -613,7 +450,8 @@ const Signuppg = () => {
   );
 };
 
-export default Signuppg;
+export default Bookflow;
+
 const LinkGroup = ({ children, header }) => {
   return (
     <div className="flex justify-center px-4 w-1/2 md:w-1/2 lg:w-4/12 xl:w-2/12">

@@ -105,8 +105,8 @@ const Apartment1 = () => {
           <div className="flex">
             <img src={compo2} alt="framme" className="m-[20px]" />
             <div className="border bg-[#ffffff] flex flex-col p-[20px] w-[100%] h-[260px] items-center justify-center m-[20px]">
-              <img src={logon} alt="framme" className="mb-[10px]" />
-              <p className="text-[14px] text-center mt-[14px] mb-[17px]">
+              <img src={logon} alt="framme" className="mb-[10px] w-[246px] h-[45px]" />
+              <p className="text-[14px] text-center mt-[3px] mb-[14px]">
                 Your comfort and satisfaction <br />
                 are our top priorities, and we're
                 <br />
@@ -290,7 +290,7 @@ const Apartment1 = () => {
                 </select>
               </div>
               <button className="mt-8 border border-[#4C4898] w-full p-[14px] bg-[#4C4898] mb-[14px] rounded-2xl h-auto text-white text-[14px]">
-                <Link to="/login"> Log in </Link>
+                <Link to="/userdashboard"> Log in </Link>
               </button>
               <p className="text-[#4C4989] text-[16px] p-[10px] font-semibold">
                 Check Out termination policy here

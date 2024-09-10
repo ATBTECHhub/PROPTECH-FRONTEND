@@ -7,6 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import logo from "../assets/logos2.svg";
 const Book = () => {
+  
   return (
     <section className="flex flex-col items-center">
       <nav
@@ -25,7 +26,7 @@ const Book = () => {
               <Link to="/explore">Function as a host</Link>
             </li>
           </ul>
-          <Link to="/signup">
+          <Link to="#">
             <Button text="Begin now" />
           </Link>
         </div>
@@ -42,40 +43,39 @@ const Book = () => {
         </p>
       </div>
 
-      <div className="border-[1px] flex flex-col  justify-center w-[50%] mb-[72px] mt-[30px] pl-[70px] text-justify pr-[70px] pt-[40px] pb-[40px] rounded-[20px] h-[100%] relative bg-white radius-[20px]">
+      <div className="border-2 flex flex-col justify-center w-full md:w-[50%] mb-[72px] mt-[30px] px-[30px] py-[40px] rounded-[20px] bg-white relative">
         <h1 className="text-[20px] font-normal">Summary</h1>
-        <div className="flex gap-[333px] text-[14px] font-normal pt-[21px] text-[#2B3F58]">
+
+        <div className="flex justify-between text-[14px] font-normal pt-[21px] text-[#2B3F58]">
           <p>2 beds. 2 baths x 4 nights</p>
           <p>₦400,000</p>
         </div>
-        <div className="flex gap-[430px] text-[14px] font-normal pt-[21px] text-[#2B3F58]">
+
+        <div className="flex justify-between text-[14px] font-normal pt-[21px] text-[#2B3F58]">
           <p>Caution Fee</p>
           <p>₦100,000</p>
         </div>
-        <div className="flex gap-[405px] text-[14px] font-normal pt-[21px] text-[#2B3F58]">
+
+        <div className="flex justify-between text-[14px] font-normal pt-[21px] text-[#2B3F58]">
           <p>Administration Fee</p>
           <p>₦0.00</p>
         </div>
-        <div className="flex gap-[477px] text-[14px] font-normal pt-[21px] text-red-600 mb-[24px] ">
+
+        <div className="flex justify-between text-[14px] font-normal pt-[21px] text-red-600 mb-[24px]">
           <p>Total</p>
           <p>₦500,000</p>
         </div>
+
         <hr />
+
         <h1 className="mt-[43px] mb-[21px] text-[20px] font-bold text-[#2B3F58]">
           Payment method
         </h1>
-        <div className="border rounded-[15px] bg-[#F0E8FF] justify-start w-[100%] mb-[21px] h-[100%] pt-[23px] pb-[23px] pl-[23px] pr-[299px] items-start inline-flex gap-[10px]">
-          <div>
-            <input
-              type="radio"
-              name="payment"
-              id="card"
-              className="radio-red"
-            />
-          </div>
-          <div>
-            <label htmlFor="card">Pay with Card / Bank Account</label>
-          </div>
+        <div className="border rounded-[15px] bg-[#F0E8FF] w-full mb-[21px] p-[23px] flex items-center gap-[5px]">
+          <input type="radio" name="payment" id="card" className="radio-red" />
+          <label htmlFor="card" className="ml-[10px] text-[12px] md:text-[16px]">
+            Pay with Card / Bank Account
+          </label>
         </div>
 
         <div className="flex gap-[10px] justify-center items-center text-[14px] mb-[42px]">
@@ -86,9 +86,12 @@ const Book = () => {
             acceptance of my booking.
           </label>
         </div>
-        <button className="border-2 border-[#4C4898] flex justify-center items-center bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center">
-          <Link to="/payment"> Confirm Payment </Link>
-        </button>
+
+        <div className="flex justify-center items-center">
+          <button className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[593px] h-[50px] md:h-[60px]">
+            <Link to="/payment"> Confirm Payment </Link>
+          </button>
+        </div>
       </div>
 
       <footer className="bg-[#12082D]">

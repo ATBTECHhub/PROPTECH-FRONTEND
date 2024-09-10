@@ -7,6 +7,8 @@ import Apartment from "./components/Apartment";
 import Apartment1 from "./components/Apartment1";
 import  Book  from "./components/Book";
 import Payment from "./components/Payment";
+import Bookflow from "./components/Bookflow";
+import Favorite from "./components/Favorite";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/apartments" element={<Apartment1 />} />
         <Route path="/bookhere" element={<Book />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/userdashboard" element={<Bookflow />} />
+        <Route path="/favoriteapartments" element={<Favorite />} />
       </Routes>
     </>
   );

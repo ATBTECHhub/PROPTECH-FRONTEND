@@ -31,7 +31,10 @@ const Herosection = () => {
               <option value="" disabled selected hidden>
                 Select Location
               </option>
-              <option value="Lagos">Lagos<br /> Nigeria</option>
+              <option value="Lagos">
+                Lagos
+                <br /> Nigeria
+              </option>
               <option value="Abuja">Abuja, Nigeria</option>
               <option value="Abeokuta">Abeokuta, Nigeria</option>
             </select>
@@ -72,12 +75,26 @@ const Herosection = () => {
           </div>
 
           <div className="flex flex-col w-full items-center">
-            <Link>
+            {/* <form className="relative">
+              <input
+                type="email"
+                placeholder="Search"
+                className="bg-[#1f2735] pr-[125px] pl-5 rounded-md w-full h-[50px] text-[#CACBCF] placeholder:text-[#CACBCF] outline-none"
+              />
               <p className="flex gap-[14px] bg-[#4C4989] px-[14px] md:px-[26px] py-[12px] border rounded-[50px] md:rounded-[30px] w-[194px] md:w-auto text-white items-center">
                 <CiSearch className="text-white" />
                 <b className="text-[16px]">Search</b>
               </p>
-            </Link>
+            </form> */}
+            <form>
+              <CiSearch className="text-white" />
+              <input
+                type="searchbox"
+                placeholder="Search"
+                className="flex gap-[14px] text-[16px] bg-[#4C4989] px-[14px] outline-none md:px-[26px] py-[12px] border rounded-[50px] md:rounded-[30px] w-[194px] md:w-auto placeholder:text-white items-center"
+              />
+              
+            </form>
           </div>
         </form>
       </div>
