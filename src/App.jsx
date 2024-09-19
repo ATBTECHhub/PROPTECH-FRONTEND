@@ -9,6 +9,9 @@ import  Book  from "./components/Book";
 import Payment from "./components/Payment";
 import Bookflow from "./components/Bookflow";
 import Favorite from "./components/Favorite";
+import Bookings from "./components/Bookings";
+import Manageacc from "./components/Manageacc";
+
 
 function App() {
   return (
@@ -23,7 +26,9 @@ function App() {
         <Route path="/bookhere" element={<Book />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/userdashboard" element={<Bookflow />} />
-        <Route path="/favoriteapartments" element={<Favorite />} />
+        <Route path="/favoriteapartment" element={<Favorite />} />
+        <Route path="/allbookings" element={<Bookings />} />
+        <Route path="/accounts" element={<Manageacc />} />
       </Routes>
     </>
   );

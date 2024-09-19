@@ -10,6 +10,9 @@ import google from "../assets/google.svg";
 import { FaMessage } from "react-icons/fa6";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import Request from "../lib/requests";
+import { useFormik } from "formik";
+import { LoginSchema } from "../schemas";
 
 const Loginpg = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -21,7 +24,36 @@ const Loginpg = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-
+  const initialValues = {
+    email: "",
+    password: ""
+  };
+  const onSubmit = async (payload, actions) => {
+    try {
+      const res = await Axios.post(Request.login, payload);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+  const {
+    handleChange,
+    values,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+    errors,
+    touched,
+  } = useFormik({
+    initialValues,
+    validationSchema: LoginSchema,
+    onSubmit,
+  });
+  const getError = (key) => {
+    return touched[key] && errors[key];
+  };
   return (
     <div>
       <nav className="bg-[#FFFFFF] md:bg-[#4C4989] flex justify-center h-[90px] border-b-[3px]">
@@ -43,7 +75,8 @@ const Loginpg = () => {
       </div>
 
       <div className="container flex flex-col items-center border-4 md:border-8 rounded-[20px] md:rounded-[50px] border-darkgray h-auto md:h-[700px] w-[90%] md:w-[700px] mt-[10px] pt-[15px] bg-white gap-[12px] md:gap-[16px] p-4">
-        <form className="flex flex-col w-full md:w-[600px] text-left gap-2 md:gap-0">
+        <form onSubmit={handleSubmit} className="flex flex-col w-full md:w-[600px] text-left gap-2 md:gap-0">
+          <div>
           <label
             htmlFor="email"
             className="text-[#2B3F58] text-[16px] md:text-[18px] font-normal"
@@ -54,10 +87,18 @@ const Loginpg = () => {
             id="email"
             type="text"
             placeholder="Enter your email"
-            className="w-full h-[45px] md:h-[55px] border-2 border-darkgray rounded-[12px] pl-[12px] text-[14px] mt-0"
+            value={values.email}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              className={`w-full h-[45px] md:h-[55px] border-2 border-darkgray rounded-[12px] pl-[12px] text-[14px] mt-0 ${
+                getError("email") ? "border border-red-500" : ""
+              }`}
             aria-label="Enter your email"
           />
-
+            </div>
+            <p className="text-red-500 text-sm font-medium">
+              {getError("email")}
+            </p>
           <div className="mb-4">
             <label
               htmlFor="password"
@@ -73,8 +114,13 @@ const Loginpg = () => {
                 type={passwordVisible ? "text" : "password"}
                 id="password"
                 name="password"
+                value={values.password}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              className={`w-full pl-10 pr-12 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:border-blue-300 ${
+                getError("password") ? "border border-red-500" : ""
+              }`}
                 placeholder="Enter your password"
-                className="w-full pl-10 pr-12 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:border-blue-300"
               />
               <span
                 className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
@@ -87,7 +133,13 @@ const Loginpg = () => {
                 )}
               </span>
             </div>
+            <p className="text-red-500 text-sm font-medium">
+              {getError("password")}
+            </p>
           </div>
+          <button type ="submit" className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center disabled:opacity-75 disabled:cursor-not-allowed">
+          Sign in 
+        </button>
         </form>
 
         <div className="flex w-full md:w-auto pb-[20px] md:pb-[50px] text-left">
@@ -114,8 +166,8 @@ const Loginpg = () => {
           </Link>
         </p>
 
-        <button className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center">
-          <Link to="/signin"> Sign in </Link>
+        <button type ="submit" className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center disabled:opacity-75 disabled:cursor-not-allowed">
+          Sign in 
         </button>
 
         <Link to="/privacy" className="text-blue-600 underline mt-2 md:mt-0">

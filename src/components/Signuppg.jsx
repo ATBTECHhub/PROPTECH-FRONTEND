@@ -5,7 +5,7 @@ import mark from "../assets/mark.svg";
 import flag from "../assets/flag.svg";
 import quest from "../assets/quest.svg";
 import google from "../assets/google.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import captcha from "../assets/captcha.svg";
 import { FaRegEyeSlash, FaEye } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
@@ -13,10 +13,19 @@ import { Axios } from "../config";
 import Request from "../lib/requests";
 import { SignupSchema } from "../schemas";
 import { useFormik } from "formik";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "react-toastify";
 
 const Signuppg = () => {
+  const navigate = useNavigate()
+  const [capVal, setCapVal] = useState(null)
+  const recaptchaRef = React.createRef();
+  const onChange = () => {
+    console.log("Captcha value:", value);
+  }
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+ 
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -31,13 +40,19 @@ const Signuppg = () => {
     phoneNumber: "",
     password: "",
     confirmPassword: "",
+    recaptcha:true
   };
   const onSubmit = async (payload, actions) => {
     try {
       const res = await Axios.post(Request.signup, payload);
       console.log(res);
+      if (res.data.message === "USER  REGISTERED SUCCESSSFULLY"){
+        toast.success("Account Created")
+        navigate("/login")
+      }
     } catch (error) {
       console.log(error);
+      toast.error(res.response.data.message)
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
@@ -241,7 +256,12 @@ const Signuppg = () => {
           </p>
 
           <div className="w-[250px] pb-[30px] sm:pb-[20px] text-left">
-            <p className="flex items-center border-2 sm:border-[1.5px] border-[#333333] rounded-[10px] sm:rounded-[8px] p-2 sm:p-1">
+          <ReCAPTCHA
+    sitekey="6LcsQ0IqAAAAAOXshfvixf7M8yazXIR1-ypAGrZH"
+    onChange={(val) => setCapVal(val)}
+    ref={recaptchaRef}
+  />
+            {/* <p className="flex items-center border-2 sm:border-[1.5px] border-[#333333] rounded-[10px] sm:rounded-[8px] p-2 sm:p-1">
               <input
                 type="checkbox"
                 className="mr-2 accent-green-500"
@@ -257,24 +277,18 @@ const Signuppg = () => {
                 alt="captcha"
                 className="ml-[20px] sm:ml-[10px]"
               />
-            </p>
+            </p> */}
           </div>
           <div className=" flex justify-center items-center">
-            <button
-              className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center"
+            <button disabled={isSubmitting}
+              className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center  disabled:opacity-75 disabled:cursor-not-allowed"
               type="submit"
             >
               Sign Up
             </button>
           </div>
         </form>
-        {/* 
-        <button
-          className="border-2 sm:border-[1.5px] border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] sm:text-[16px] font-medium w-full sm:w-[450px] h-[60px] sm:h-[50px] text-center"
-          type="submit"
-        >
-          Sign Up
-        </button> */}
+      
 
         <div className="flex items-center w-full justify-center gap-2 sm:gap-1 mt-4">
           <hr className="w-[80px] sm:w-[60px] h-[2px] border-2 sm:border-[1.5px] border-darkgrey" />

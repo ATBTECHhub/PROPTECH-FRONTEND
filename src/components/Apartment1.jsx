@@ -29,7 +29,7 @@ const Apartment1 = () => {
   return (
     <section>
       <nav
-        className="h-[75px] fixed w-full z-[2] flex justify-cente bg-white border-b-[3px]
+        className="h-[75px] fixed w-full z-[2] flex justify-center bg-white border-b-[3px]
       "
       >
         <div className="container flex justify-between items-center sm:gap-[15px]">

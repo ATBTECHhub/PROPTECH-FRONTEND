@@ -9,17 +9,37 @@ import { rooms } from "../constants/data";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 const Bookflow = () => {
-     const navigate = useNavigate();
 
-     const handleSelectChange = (e) => {
-       if (e.target.value === "Favorite") {
-         navigate("/favoriteapartments");
-       }
-     };
+  
+  const navigate = useNavigate();
+
+  const handleSelectChange = (event) => {
+    const value = event.target.value;
+    switch (value) {
+      case "account":
+        navigate("/accounts");
+        break;
+      case "bookings":
+        navigate("/allbookings");
+        break;
+      case "favorite":
+        navigate("/favoriteapartment");
+        break;
+      case "message":
+        navigate("/");
+        break;
+      case "logout":
+        navigate("/");
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <section>
       <nav
-        className="h-[75px] fixed w-full z-[2] flex justify-cente bg-white border-b-[3px]
+        className="h-[75px] fixed w-full z-[2] flex justify-center bg-white border-b-[3px]
       "
       >
         <div className="container flex justify-between items-center sm:gap-[15px]">
@@ -58,26 +78,25 @@ const Bookflow = () => {
                 className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer bg-[#4C4989] text-white leading-3 p-2"
               >
                 <option
-                  value="One Bedroom"
+                  value="account"
                   className="text-xs py-2 px-4 m-10 bg-none"
                 >
-                  <Link to="/">Account</Link>
+                  Account
                 </option>
                 <option
-                  value="One Bedroom"
+                  value="bookings"
                   className="text-xs py-2 px-4 m-10 bg-none"
                 >
-                  <Link to="/">Handle Bookings</Link>
+                  Handle Bookings
                 </option>
-                <option value="Two Bedroom" className="text-xs py-2 px-4">
+                <option value="favorite" className="text-xs py-2 px-4">
                   Favorite
                 </option>
-
-                <option value="Two Bedroom" className="text-xs py-2 px-4">
-                  <Link to="/">Message</Link>
+                <option value="message" className="text-xs py-2 px-4">
+                  Message
                 </option>
-                <option value="Two Bedroom" className="text-xs py-2 px-4">
-                  <Link to="/">Logout</Link>
+                <option value="logout" className="text-xs py-2 px-4">
+                  Logout
                 </option>
               </select>
               <span className="absolute right-2 top-2 pointer-events-none text-white">
