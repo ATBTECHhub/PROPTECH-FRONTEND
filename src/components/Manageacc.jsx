@@ -20,7 +20,7 @@ const Manageacc = () => {
         navigate("/favoriteapartment");
         break;
       case "message":
-        navigate("/");
+        navigate("/message");
         break;
       case "logout":
         navigate("/");

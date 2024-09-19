@@ -79,7 +79,7 @@ const Loginpg = () => {
           <div>
           <label
             htmlFor="email"
-            className="text-[#2B3F58] text-[16px] md:text-[18px] font-normal"
+            className="text-[#2B3F58] text-[16px] md:text-[18px] font-normal mb-[15px]"
           >
             Email
           </label>
@@ -137,12 +137,8 @@ const Loginpg = () => {
               {getError("password")}
             </p>
           </div>
-          <button type ="submit" className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center disabled:opacity-75 disabled:cursor-not-allowed">
-          Sign in 
-        </button>
-        </form>
 
-        <div className="flex w-full md:w-auto pb-[20px] md:pb-[50px] text-left">
+          <div className="flex w-full md:w-auto pb-[20px] md:pb-[50px] text-left">
           <p className="pt-[10px] md:pt-[25px] flex items-center">
             <input
               type="checkbox"
@@ -165,10 +161,16 @@ const Loginpg = () => {
             Privacy Policy
           </Link>
         </p>
+          <button type ="submit" className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center disabled:opacity-75 disabled:cursor-not-allowed">
+          <Link to="/landingpageonlogin">Sign in </Link>
+        </button>
+        </form>
 
+        
+{/* 
         <button type ="submit" className="border-2 border-[#4C4898] bg-[#4C4898] text-white py-2 px-4 rounded-[10px] text-[18px] md:text-[20px] font-medium w-full md:w-[580px] h-[50px] md:h-[60px] text-center disabled:opacity-75 disabled:cursor-not-allowed">
           Sign in 
-        </button>
+        </button> */}
 
         <Link to="/privacy" className="text-blue-600 underline mt-2 md:mt-0">
           Forget your password
@@ -195,7 +197,7 @@ const Loginpg = () => {
         </p>
       </div>
 
-      <footer className="bg-[#12082D] md:block hidden">
+      <footer className="bg-[#12082D] md:block hidden mt-[25px]">
         <div className="relative z-10 flex justify-center pt-20 lg:pt-24">
           <div className="mx-auto container">
             <div className="flex flex-wrap -mx-4">

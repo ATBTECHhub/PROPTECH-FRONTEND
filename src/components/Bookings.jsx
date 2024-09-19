@@ -8,6 +8,8 @@ import bank from "../assets/bank.svg";
 import { FaMessage } from "react-icons/fa6";
 import logo from "../assets/logos2.svg";
 import { CiSearch } from "react-icons/ci";
+import { CgProfile } from "react-icons/cg";
+import { CiMenuKebab } from "react-icons/ci";
 const Bookings = () => {
     const navigate = useNavigate();
 
@@ -24,7 +26,7 @@ const Bookings = () => {
                 navigate("/favoriteapartment");
                 break;
             case "message":
-                navigate("/");
+                navigate("/message");
                 break;
             case "logout":
                 navigate("/");
@@ -127,37 +129,346 @@ const Bookings = () => {
                     </button>
                 </div>
             </div>
-            <div className="border rounded-[20px] w-[1195px] h-[879px] bg-white pt-[30px] ml-[120px] mr-[120px] mt-[57px] mb-[57px] pb-[30px] flex flex-col ">
+            <section className="border rounded-[20px] w-[1195px] h-[1070px] bg-white pt-[30px] ml-[120px] mr-[120px] mt-[57px] mb-[57px] pb-[30px] flex flex-col ">
                 <h1 className="w-[446px] h-[48px] font-semibold text-[30px] text-[#2B3F58] leading-[48px] ml-[22px]">All Bookings</h1>
-                <p className="w-[446px] h-[21px] font-normal text-[14px] text-[#2B3F58] ml-[22px] leading-[21px] mb-[30px]">All your past reservations are available for viewing on this page</p>
-
-                <form>
-    <table className="border-[#F0E8FF] w-[1195px]  bg-[#F0E8FF]">
-        <tbody>
-            <tr>
-                <td className="w-[1005px] p-[10px] m-[20px]">
-                    <h1 className="mr-[124px]">
-                        <span className="text-[18px] font-semibold text-[#2B3F58]">Booking History</span>
-                        <br />
-                        <span className="text-[11px] font-normal text-[#2B3F58]">Manage all your bookings here</span>
-                    </h1>
-                </td>
-                <td className="w-[40%] p-[10px]">
+                <p className="w-[446px] h-[21px] font-normal text-[14px] text-[#2B3F58] ml-[22px] leading-[21px] mb-[20px]">All your past reservations are available for viewing on this page</p>
+                <div className="border-bg-[#F0E8FF] bg-[#F0E8FF] m-[22px] p-[15px] flex">
+                    <div>
+                        <h1 className="mr-[124px]">
+                            <span className="text-[18px] font-semibold text-[#2B3F58]">Booking History</span>
+                            <br />
+                            <span className="text-[13px] font-normal text-[#2B3F58]">Manage all your bookings here</span>
+                        </h1>
+                    </div>
                     <div className="flex gap-[12px] items-center">
-                        <div className="flex items-center">
-                            <CiSearch />
-                            <input type="text" placeholder="search" className="w-[250px] h-[50px] border-white rounded-[10px] bg-white pl-[10px]" />
+                        <div className="relative flex items-center">
+                            <input
+                                type="text"
+                                placeholder="search"
+                                className="w-[250px] h-[50px] border-white rounded-[10px] bg-white pl-[40px]"
+                            />
+                            <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-bold text-gray" />
                         </div>
+
                         <input type="text" placeholder="Filter by status" className="h-[50px] border-white rounded-[10px] bg-white pl-[10px]" />
                         <input type="text" placeholder="Filter by date" className="h-[50px] border-white rounded-[10px] bg-white pl-[10px]" />
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+                </div>
 
-            </div>
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Apartment</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px] mr-[85px]">Location</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border-[#F0E8FF] rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px] mr-[45px]">Profile</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px] mr-[170px]">Stay Period</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px] mr-[12px]">Amount</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#4C4989] font-semibold text-[12px] mr-[20px]">Status</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px] ">Action</h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#4C4989] font-semibold text-[12px] border-[#4C49891A] bg-[#4C49891A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked in</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey">
+                        <h4 className="text-[#34C759] font-semibold text-[12px] border-[#34C759] bg-[#34C7591A] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Checked out</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div className="border-blue bg-grey mr-[17px]">
+                        <h4 className="text-red-500 font-semibold text-[12px] border-[#FFEDEC] bg-[#FFEDEC] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px]">Cancelled</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+                <div className="border-white mr-[22px] mt-[2px] ml-[22px] p-[15px] flex gap-[40px] items-center">
+                    <div>
+                        <input type="checkbox" className="w-[30px] h-[30px]" />
+                    </div>
+                    <div>
+                        <h1 className="font-semibold text-[14px] text-[#2B3F58]">Royal Suit</h1>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Banana Island, Lagos</h4>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <div className="border rounded-full bg-[#F0E8FF] flex items-center justify-center p-[10px]">
+                            <CgProfile className="text-[#4C4989] w-[20px] h-[20px]" />
+                        </div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">Juwon Craig</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#4C4989] font-semibold text-[14px]">Fri, 12 Aug, 2024 - Mon, 16 Aug, 2024</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]">₦500,000</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-red-500 font-semibold text-[12px] border-[#FFEDEC] bg-[#FFEDEC] pl-[10px] pr-[10px] pb-[5px] pt-[5px] rounded-[20000px] ">Cancelled</h4>
+                    </div>
+                    <div>
+                        <h4 className="text-[#2B3F58] font-semibold text-[14px]"><CiMenuKebab /></h4>
+                    </div>
+                </div>
+                <hr className="ml-[22px] mr-[22px]" />
+
+                <div className="text-[14px] text-[#2B3F58] font-semibold mr-[53px] mt-[21px] mb-[18px] p-[22px] item-center flex">
+                    <h1 >showing 8 items of 250</h1>
+                </div>
+            </section>
 
             <footer className="bg-[#12082D] w-full">
                 <div className="relative z-10 flex justify-center pt-20 lg:pt-24">

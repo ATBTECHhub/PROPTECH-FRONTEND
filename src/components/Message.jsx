@@ -2,43 +2,40 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logos from "../assets/logos2.svg";
 import man from "../assets/man.svg";
-import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaMessage } from "react-icons/fa6";
 import logo from "../assets/logos2.svg";
-import { rooms } from "../constants/data";
-import Button from "./Button";
+import { IoIosNotificationsOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-const Bookflow = () => {
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
-  
-  const navigate = useNavigate();
+const Message = () => {
+    const navigate = useNavigate();
 
-  const handleSelectChange = (event) => {
-    const value = event.target.value;
-    switch (value) {
-      case "account":
-        navigate("/accounts");
-        break;
-      case "bookings":
-        navigate("/allbookings");
-        break;
-      case "favorite":
-        navigate("/favoriteapartment");
-        break;
-      case "message":
-        navigate("/message");
-        break;
-      case "logout":
-        navigate("/");
-        break;
-      default:
-        break;
-    }
-  };
-
-  return (
+    const handleSelectChange = (event) => {
+      const value = event.target.value;
+      switch (value) {
+        case "account":
+          navigate("/accounts");
+          break;
+        case "bookings":
+          navigate("/allbookings");
+          break;
+        case "favorite":
+          navigate("/favoriteapartment");
+          break;
+        case "message":
+          navigate("/message");
+          break;
+        case "logout":
+          navigate("/");
+          break;
+        default:
+          break;
+      }
+    };
+    return (
     <section>
-      <nav
+      {/* <nav
         className="h-[75px] fixed w-full z-[2] flex justify-center bg-white border-b-[3px]
       "
       >
@@ -46,18 +43,14 @@ const Bookflow = () => {
           <Link to="/">
             <img src={logos} alt="logo" className="sm:hidden md:block" />
           </Link>
-          {/* <img src={logo} alt="logo" className="block lg:hidden" /> */}
+          
           <div className="flex items-center gap-[18px]">
             <ul className="hidden lg:flex gap-[32px] text-[#4C4989] ">
-              {/* <li>
-              <Link to="/">Reserve a space</Link>
-            </li> */}
+            
               <li className="border-[1px] p-[15px] text-[16px] rounded-[10px] text-[#4C4989]">
                 <Link to="/explore">Function as a host</Link>
               </li>
-              {/* <IoIosNotifications /> */}
-            </ul>
-            {/* <IoIosNotificationsOutline className="sm:hidden md:block md:text-[32px] md:text-[#4C4989]" /> */}
+           </ul>
             <IoIosNotificationsOutline className="hidden md:block md:text-[32px] md:text-[#4C4989]" />
 
             <div className="relative inline-flex items-center gap-[3px] border p-2 rounded-[90px] bg-[#4C4989] border-[#4C4989] md:h-[55px] h-[30px] md:w-[120px] w-[100px]">
@@ -106,52 +99,14 @@ const Bookflow = () => {
           </div>
         </div>
       </nav>
+       */}
+       <FaLongArrowAltLeft className=" mt-[42px] ml-[196px] mr-[1296px]"/>
+      <h1 className="mt-[56px] container text-[32px] text-[#2B3F58] font-medium">Message</h1>
+      
+      <section className=" py-[30px] bg-[url('/src/assets/unsplash.svg')] bg-cover bg-center ">
+      </section>
 
-      <div className="flex flex-col items-center px-4 pt-[95px] pb-[50px] text-black text-center">
-        <h1 className="pt-[20px] md:pt-[73px] font-bold text-[#2B3F58] text-[1.2rem] md:text-[2rem] leading-12">
-          Favorite Apartments
-        </h1>
-        <p className="pt-[5px] pb-[25px] text-[#2B3F58] text-[0.9rem] md:text-[1.5rem]">
-          Discover premium comfort and luxury in every stay.
-        </p>
-      </div>
-      <div className="gap-[20px] sm:gap-[30px] lg:gap-[41px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:m-[75px] items-center justify-center text-[#2B3F58] container mb-[10px]">
-        {rooms.map((item, index) => (
-          <div key={index} className="flex flex-col relative">
-            <div className="relative">
-              <img
-                src={item.image}
-                alt=""
-                className={`pb-[20px] sm:pb-[30px] lg:pb-[37px] ${
-                  index === rooms.length - 1 ? "last-image" : ""
-                }`}
-              />
-              {index === rooms.length - 1 && (
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 opacity-50 pointer-events-none"></div>
-              )}
-            </div>
-            <p className="font-bold text-[#2B3F58] text-center sm:text-left leading-[27px]">
-              {item.header}
-            </p>
-            <p className="pt-[8px] pb-[10px] font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
-              {item.Location}
-            </p>
-            <p className="pt-[8px] pb-[10px] font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
-              {item.amenities}
-            </p>
-            <p className="font-[16px] text-[#2B3F58] text-[1rem] text-center sm:text-left">
-              {item.price}
-            </p>
-          </div>
-        ))}
 
-        <Link
-          to="/view more"
-          className="flex justify-center sm:justify-end col-span-1 sm:col-span-2 lg:col-span-3 mt-4"
-        >
-          <Button text="View More" />
-        </Link>
-      </div>
 
       <footer className="bg-[#12082D]">
         <div className="relative z-10 flex justify-center pt-20 lg:pt-24">
@@ -465,33 +420,33 @@ const Bookflow = () => {
           </div>
         </div>
       </footer>
-    </section>
-  );
+  </section>
+    );
 };
 
-export default Bookflow;
+export default Message;
 
 const LinkGroup = ({ children, header }) => {
-  return (
-    <div className="flex justify-center px-4 w-1/2 md:w-1/2 lg:w-4/12 xl:w-2/12">
-      <div className="mb-16">
-        <h3 className="pb-5 font-semibold text-white text-xl">{header}</h3>
-        <span className="block bg-white mb-8 rounded w-10 h-[3px]"></span>
-        <ul className="space-y-3">{children}</ul>
+    return (
+      <div className="flex justify-center px-4 w-1/2 md:w-1/2 lg:w-4/12 xl:w-2/12">
+        <div className="mb-16">
+          <h3 className="pb-5 font-semibold text-white text-xl">{header}</h3>
+          <span className="block bg-white mb-8 rounded w-10 h-[3px]"></span>
+          <ul className="space-y-3">{children}</ul>
+        </div>
       </div>
-    </div>
-  );
-};
-
-const NavLink = ({ name, link }) => {
-  return (
-    <li>
-      <a
-        href={link}
-        className="text-[#cacbcf] text-base hover:text-white hover:underline transition-all"
-      >
-        {name}
-      </a>
-    </li>
-  );
-};
+    );
+  };
+  
+  const NavLink = ({ name, link }) => {
+    return (
+      <li>
+        <a
+          href={link}
+          className="text-[#cacbcf] text-base hover:text-white hover:underline transition-all"
+        >
+          {name}
+        </a>
+      </li>
+    );
+  };
